@@ -1,2 +1,5 @@
-# PUIS
- https://github.com/suhyun-yoo/PUIS.git
+### 사용 기술 스택
+
+>**Front-end** : React html css <br>
+>**Back-end** : Node.js <br>
+>**Data** : MySQL
