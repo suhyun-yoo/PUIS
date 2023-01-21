@@ -1,8 +1,9 @@
 import React from 'react';
-
 // css 연결
 import '../css/reset.css';
 import '../css/style.css';
+// jquey 연결
+import $ from 'jquery';
 
 function Nav() {
     // hamgurger 버튼 클릭 시, submenu 보이기
