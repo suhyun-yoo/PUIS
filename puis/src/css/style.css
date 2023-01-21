@@ -121,12 +121,11 @@
 .banner{
     width: 80%;
     margin: 0 auto;
-    height: calc(100vh - 70px);
-    margin-top: 50px;
+    height: 80vh;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 /* 1. 좌측 가게 사진 박스 */
 .banner .banner-box-left{
@@ -167,4 +166,79 @@
     height: calc(75% - 20px);
     background: url(../img/pudding.jpg) no-repeat center center;
     background-size: cover;
+}
+
+/* ========== section1 영역 ============ */
+.sec1{
+    width: 80%;
+    margin: 0 auto;
+    height: 80vh;
+    margin-top: 50px;
+}
+.sec1 h2{
+    font-family: 'Noto Serif Toto', serif;
+    padding-left: 20px;
+    font-size: 1.5rem;
+}
+.sec1 p{
+    text-align: end;
+    font-size: 1.5rem;
+    font-family: 'Noto Serif Toto', serif;
+}
+/* 1. slide 박스 */
+.sec1 .mask{
+    width: 100%;
+    overflow: hidden;
+}
+.sec1 .mask .slide-wrapper{
+    width: 1910px;
+    height: 40%;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.sec1 .mask .slide-wrapper .slide p,
+.sec1 .mask .slide-wrapper .slide span{
+    font-size: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+}
+.sec1 .mask .slide-wrapper .slide span{
+    color: #A5AFA5;
+    font-weight: 200;
+}
+.sec1 .mask .slide1 .slide{
+    width: 150px;
+    height: 180px;
+    padding: 0 5px;
+    margin-right: 10px;
+    position: relative;
+}
+.sec1 .mask .slide1 .slide .tag{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    text-align: center;
+    line-height: 20px;
+    background-color: #94A66D;
+    color: #E8ECDF;
+    width: 100px;
+    height: 20px;
+    z-index: 9;
+}
+.sec1 .slide1 .slide .img-box{
+    width: 150px;
+    height: 150px;
+    background: url(../img/베리치즈푸딩.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .slide1 .slide .txt-box{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

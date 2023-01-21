@@ -13,6 +13,7 @@ function Main() {
     // alert($(window).height()); // 781
     return (
         <FullPage controls>
+            {/* banner 영역 */}
             <Slide>
                 <div className="banner">
                     <div className="banner-box-left"></div>
@@ -29,7 +30,106 @@ function Main() {
                     </div>
                 </div>
             </Slide>
-            <Slide>2</Slide>
+
+            {/* section1 영역 */}
+            <Slide>
+                <section className="sec1">
+                    <h2>MENU</h2>
+                    <p>pudding</p>
+                    <div className="mask">
+                        <div className="slide-wrapper slide1">
+                            <div className="slide">
+                                <p class="tag">SIGNATURE</p>
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div class="txt-box">
+                                    <p>조선향미 푸딩</p>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>financier</p>
+                    <div className="slide-wrapper slide2"></div>
+                </section>
+            </Slide>
         </FullPage>
     );
 }
