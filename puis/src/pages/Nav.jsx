@@ -8,6 +8,7 @@ import $ from 'jquery';
 function Nav() {
     // hamgurger 버튼 클릭 시, submenu 보이기
     const menuClick = () => {
+        $('.wrap header .hamburger').toggleClass('active');
         $('.wrap .submenu').toggleClass('active');
     };
 
