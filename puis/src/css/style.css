@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/* nav 영역 */
+/* 1. header */
+.wrap header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 80px;
+    background-color: #BEC9A6;
+    font-family: 'Noto Serif Toto', serif;
+}
+.wrap header .container{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 2. menu-btn */
+.wrap header .hamgurger{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.wrap header .hamgurger span{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #F1F2F0;
+    position: relative;
+}
+.wrap header .hamgurger span{
+    position: absolute;
+}
+.wrap header .hamgurger span:nth-child(1){
+    top: 0;
+}
+.wrap header .hamgurger span:nth-child(2){
+    top: 50%;
+}
+.wrap header .hamgurger span:nth-child(3){
+    top: 100%;
+}
+
+/* 3. logo */
+.wrap header .logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: #F1F2F0;
+    cursor: pointer;
+}
+
+/* 4. icon-box */
+.wrap header .icon-box{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.wrap header .icon-box svg{
+    fill: none;
+    stroke-width: 4px;
+}
+
+/* 5. sub-menu */
+.wrap .submenu{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(27, 27, 27, 0.47);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-100%);
+}
+.wrap .submenu li{
+    font-size: 2rem;
+    font-family: 'Noto Serif Toto', serif;
+    margin: 20px 0;
+    color: #F1F2F0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.wrap .submenu li:hover{
+    color: #a9b78a;
+}
