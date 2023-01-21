@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+/* ========== nav 영역 ========== */
+/* 1. header */
+.wrap header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 80px;
+    background-color: #BEC9A6;
+    font-family: 'Noto Serif Toto', serif;
+}
+.wrap header .container{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 2. menu-btn */
+.wrap header .hamburger{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.wrap header .hamburger span{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #F1F2F0;
+    position: relative;
+}
+.wrap header .hamburger span{
+    position: absolute;
+    transition: 0.3s;
+}
+.wrap header .hamburger span:nth-child(1){
+    top: 0;
+}
+.wrap header .hamburger span:nth-child(2){
+    top: 50%;
+}
+.wrap header .hamburger span:nth-child(3){
+    top: 100%;
+}
+/* 햄버거버튼에 active 클래스 추가 시, 스타일링 */
+.wrap header .hamburger.active span:nth-child(1){
+    top: 50%;
+    transform: rotate(45deg);
+}
+.wrap header .hamburger.active span:nth-child(2){
+    opacity: 0;
+}
+.wrap header .hamburger.active span:nth-child(3){
+    top: 50%;
+    transform: rotate(-45deg);
+}
+/* 3. logo */
+.wrap header .logo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: #F1F2F0;
+    cursor: pointer;
+}
+
+/* 4. icon-box */
+.wrap header .icon-box{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.wrap header .icon-box svg{
+    fill: none;
+    stroke-width: 4px;
+}
+
+/* 5. sub-menu */
+.wrap .submenu{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(27, 27, 27, 0.47);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transform: translateY(-100%);
+}
+.wrap .submenu.active{
+    transform: translateY(0);
+}
+.wrap .submenu li{
+    font-size: 2rem;
+    font-family: 'Noto Serif Toto', serif;
+    margin: 20px 0;
+    color: #F1F2F0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.wrap .submenu li:hover{
+    color: #a9b78a;
+}
+
+/* ========== banner 영역 ========== */
+.banner{
+    width: 80%;
+    margin: 0 auto;
+    height: 80vh;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 1. 좌측 가게 사진 박스 */
+.banner .banner-box-left{
+    width: 25vw;
+    height: 60vh;
+    border-top-left-radius: 250px;
+    background: url(../img/background.jpg) center center no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+}
+/* 2. 우측 설명 및 음식 박스 */
+.banner .banner-box-right{
+    width: 20vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner .banner-box-right .txt-box{
+    width: 100%;
+    height: 25%;
+    background-color: #94A66D;
+    color: #E8ECDF;
+    font-family: 'Noto Serif Toto', serif;
+    text-align: center;
+    padding: 10px 0;
+}
+.banner .banner-box-right .txt-box p{
+    text-transform: capitalize;
+}
+.banner .banner-box-right .txt-box .time{
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+.banner .banner-box-right .img-box{
+    width: 100%;
+    height: calc(75% - 20px);
+    background: url(../img/pudding.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+/* ========== section1 영역 ============ */
+.sec1{
+    width: 80%;
+    margin: 0 auto;
+    height: 80vh;
+    margin-top: 50px;
+}
+.sec1 h2{
+    font-family: 'Noto Serif Toto', serif;
+    padding-left: 20px;
+    font-size: 1.5rem;
+}
+.sec1 p{
+    text-align: end;
+    font-size: 1.5rem;
+    font-family: 'Noto Serif Toto', serif;
+}
+/* 1. slide 박스 */
+.sec1 .mask{
+    width: 100%;
+    overflow: hidden;
+}
+.sec1 .mask .slide-wrapper{
+    width: 1910px;
+    height: 40%;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.sec1 .mask .slide-wrapper .slide p,
+.sec1 .mask .slide-wrapper .slide span{
+    font-size: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+}
+.sec1 .mask .slide-wrapper .slide span{
+    color: #A5AFA5;
+    font-weight: 200;
+}
+.sec1 .mask .slide1 .slide{
+    width: 150px;
+    height: 180px;
+    padding: 0 5px;
+    margin-right: 10px;
+    position: relative;
+}
+.sec1 .mask .slide1 .slide .tag{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    text-align: center;
+    line-height: 20px;
+    background-color: #94A66D;
+    color: #E8ECDF;
+    width: 100px;
+    height: 20px;
+    z-index: 9;
+}
+.sec1 .slide1 .slide .img-box{
+    width: 150px;
+    height: 150px;
+    background: url(../img/베리치즈푸딩.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .slide1 .slide .txt-box{
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
