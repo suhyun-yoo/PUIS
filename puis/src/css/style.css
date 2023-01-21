@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* nav 영역 */
+/* ========== nav 영역 ========== */
 /* 1. header */
 .wrap header{
     position: fixed;
@@ -38,6 +38,7 @@
 }
 .wrap header .hamburger span{
     position: absolute;
+    transition: 0.3s;
 }
 .wrap header .hamburger span:nth-child(1){
     top: 0;
@@ -48,7 +49,18 @@
 .wrap header .hamburger span:nth-child(3){
     top: 100%;
 }
-
+/* 햄버거버튼에 active 클래스 추가 시, 스타일링 */
+.wrap header .hamburger.active span:nth-child(1){
+    top: 50%;
+    transform: rotate(45deg);
+}
+.wrap header .hamburger.active span:nth-child(2){
+    opacity: 0;
+}
+.wrap header .hamburger.active span:nth-child(3){
+    top: 50%;
+    transform: rotate(-45deg);
+}
 /* 3. logo */
 .wrap header .logo{
     position: absolute;
@@ -103,4 +115,56 @@
 }
 .wrap .submenu li:hover{
     color: #a9b78a;
+}
+
+/* ========== banner 영역 ========== */
+.banner{
+    width: 80%;
+    margin: 0 auto;
+    height: calc(100vh - 70px);
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+/* 1. 좌측 가게 사진 박스 */
+.banner .banner-box-left{
+    width: 25vw;
+    height: 60vh;
+    border-top-left-radius: 250px;
+    background: url(../img/background.jpg) center center no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+}
+/* 2. 우측 설명 및 음식 박스 */
+.banner .banner-box-right{
+    width: 20vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner .banner-box-right .txt-box{
+    width: 100%;
+    height: 25%;
+    background-color: #94A66D;
+    color: #E8ECDF;
+    font-family: 'Noto Serif Toto', serif;
+    text-align: center;
+    padding: 10px 0;
+}
+.banner .banner-box-right .txt-box p{
+    text-transform: capitalize;
+}
+.banner .banner-box-right .txt-box .time{
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+.banner .banner-box-right .img-box{
+    width: 100%;
+    height: calc(75% - 20px);
+    background: url(../img/pudding.jpg) no-repeat center center;
+    background-size: cover;
 }
