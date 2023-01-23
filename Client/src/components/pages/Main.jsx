@@ -50,11 +50,84 @@ function Main() {
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>바나나 푸딩</p>
+                                    <span>4.0</span>
                                 </div>
                             </div>
                             <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>바나나카라멜 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>베리치즈 푸딩</p>
+                                    <span>5.3</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>다크초코 푸딩</p>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>민트초코 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>제주말차 푸딩</p>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>티라미수 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>인절미 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>흑임자 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>쑥 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>밀크티 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="slide-wrapper slide1">
+                            <div className="slide">
+                                <p className="tag">SIGNATURE</p>
                                 <div className="img-box"></div>
                                 <div className="txt-box">
                                     <p>조선향미 푸딩</p>
@@ -64,64 +137,78 @@ function Main() {
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>바나나 푸딩</p>
+                                    <span>4.0</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>바나나카라멜 푸딩</p>
+                                    <span>4.5</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>베리치즈 푸딩</p>
+                                    <span>5.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>다크초코 푸딩</p>
+                                    <span>5.0</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>민트초코 푸딩</p>
+                                    <span>4.5</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>제주말차 푸딩</p>
+                                    <span>5.0</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>티라미수 푸딩</p>
+                                    <span>4.5</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>인절미 푸딩</p>
+                                    <span>4.5</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
                                 <div className="txt-box">
-                                    <p>조선향미 푸딩</p>
-                                    <span>4.3</span>
+                                    <p>흑임자 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>쑥 푸딩</p>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <div className="slide">
+                                <div className="img-box"></div>
+                                <div className="txt-box">
+                                    <p>밀크티 푸딩</p>
+                                    <span>4.5</span>
                                 </div>
                             </div>
                         </div>

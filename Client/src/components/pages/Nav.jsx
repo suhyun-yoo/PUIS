@@ -172,10 +172,10 @@ function Nav() {
                     </div>
                     <h2>Sign UP</h2>
                     <div className="input-box">
-                        <input type="text" placeholder='ID' onChange={(e) => setID(e.target.value)} value={ID}/>
-                        <input type="password" placeholder='Password' onChange={(e) => setPW(e.target.value)} value={PW}/>
-                        <input type="password" placeholder='Password Check' onChange={(e) => setPWcheck(e.target.value)} value={PWcheck}/>
-                        <input type="email" placeholder='E - mail' onChange={(e) => setEmail(e.target.value)} value={Email}/>
+                        <input type="text" placeholder='* ID' onChange={(e) => setID(e.target.value)} value={ID}/>
+                        <input type="password" placeholder='* Password' onChange={(e) => setPW(e.target.value)} value={PW}/>
+                        <input type="password" placeholder='* Password Check' onChange={(e) => setPWcheck(e.target.value)} value={PWcheck}/>
+                        <input type="email" placeholder='* E - mail' onChange={(e) => setEmail(e.target.value)} value={Email}/>
                         <input type="text" placeholder='Address' onChange={(e) => setAddress(e.target.value)} value={Address}/>
                         <input type="text" placeholder='Phone' onChange={(e) => setPhone(e.target.value)} value={Phone}/>
                         
