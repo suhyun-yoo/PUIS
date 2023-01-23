@@ -188,6 +188,7 @@
 }
 /* 1. slide 박스 */
 .sec1 .mask{
+    background-color: red;
     width: 100%;
     overflow: hidden;
 }
