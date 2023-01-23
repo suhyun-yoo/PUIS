@@ -1,7 +1,7 @@
 ### 사용 기술 스택
 
 >**Front-end** : React html css <br>
->**Back-end** : Node.js <br>
+>**Back-end** : Node.js ( express.js ) <br>
 >**Data** : MySQL
 
 ### 프로젝트 SA
