@@ -68,7 +68,7 @@ function Nav() {
         $('.wrap .signupBox').removeClass('active');
     };
 
-    // 7. 회원가입 팝업창 입력 내용 axios 백단으로 넘기기
+    // 7. 회원가입 팝업창 입력 내용 유효성 검사 후, axios 백단으로 넘기기
     // 7-1. 입력창에 입력된 내용 변수에 담기 (id pw는 앞서 선언했기 때문에 패스)
     const [PWcheck, setPWcheck] = useState('');
     const [Email, setEmail] = useState('');
@@ -78,36 +78,49 @@ function Nav() {
     const signupUser = (e) => {
         e.preventDefault();
 
-        // 7-2. ID, PW 백단으로 넘기기
-        const url = 'http://localhost:5000/signup';
-        const headers = {
-            'Content-Type' : 'application/json'
-        };
-        const body = {
-            'ID' : ID,
-            'PW' : PW,
-            'Email' : Email,
-            'Address' : Address,
-            'Phone' : Phone
-        };
-        axios.post(url, body, {headers})
-        .then(res => {
-            console.log(res.data.result);
-            // 회원가입 입력창 초기화
-            setID('');
-            setPW('');
-            setPWcheck('');
-            setEmail('');
-            setAddress('');
-            setPhone('');
+        // 7-2. 입력값 검사하기
+        if(PW !== PWcheck){
+            // 비밀번호 검사하기
+            alert('비밀번호를 확인해주세요');
+        } else if(ID === '' || Email === '' || PW === '' || PWcheck === ''){
+            // 필수 입력값 검사하기
+            alert('필수 입력창을 확인해주세요');
+        } else if(Email.includes('@') === false){
+            // 이메일 검사하기
+            alert('[example@naver.com] 형식으로 입력해주세요')
+        } else {
+            // 7-3. 회원가입 정보 백단으로 넘기기
+            const url = 'http://localhost:5000/signup';
+            const headers = {
+                'Content-Type' : 'application/json'
+            };
+            const body = {
+                'ID' : ID,
+                'PW' : PW,
+                'Email' : Email,
+                'Address' : Address,
+                'Phone' : Phone
+            };
+            axios.post(url, body, {headers})
+            .then(res => {
+                console.log(res.data.result);
+                // 회원가입 입력창 초기화
+                setID('');
+                setPW('');
+                setPWcheck('');
+                setEmail('');
+                setAddress('');
+                setPhone('');
 
-            // 회원가입 완료 알림창 띄우기
-            alert('회원가입 완료! 로그인하기')
+                // 회원가입 완료 알림창 띄우기
+                alert('회원가입 완료! 로그인하기')
 
-            // 로그인 팝업 띄우기
-            $('.wrap .signupBox').removeClass('active');
-            $('.wrap .loginBox').addClass('active');
-        })
+                // 로그인 팝업 띄우기
+                $('.wrap .signupBox').removeClass('active');
+                $('.wrap .loginBox').addClass('active');
+            })
+        }
+
     };
 
     return (
