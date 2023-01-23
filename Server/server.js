@@ -11,25 +11,37 @@ const bodyParser = require('body-parser');
 // const mysql = require('mysql');
 // mysql db 생성 후, 연결 시 사용 예정
 
-// ==============================================================================
-// express 사용 연결하기
+
+// ========== express 사용 연결하기 ==========
 const app = express();
 
 // application/x-www-form-urlencoded 방식이 아닌 다른 인코딩 방식이기 때문에 true 설정
 // 참고링크 : https://cheony-y.tistory.com/267
 app.use(bodyParser.urlencoded({extended : true})); 
-
 // Content-Type : application/json 방식의 데이터 받아주도록 설정
 app.use(bodyParser.json()); 
-
 app.use(cors({
     origin : '*', // 출처 허용 옵션
     credentials : true, // 응답 headers에 accss-control-allow-credentials 추가
     optionsSuccessStatus : 200 // 응답 상태 기본 설정
 }));
 
-// ==============================================================================
-// 5000번 포트 연결 확인하기
+
+// ========== login 정보 받기 ==========
+app.post('/login', (req,res) => {
+    console.log(req.body);
+    res.send({'result' : 'success'});
+});
+
+
+// ========== signup 정보 받기 ==========
+app.post('/signup', (req, res) => {
+    console.log(req.body);
+    res.send({'result' : 'success'});
+});
+
+
+// ========== 5000번 포트 연결 확인하기 ==========
 // http://localhost:5000/ 에서 응답 확인 가능
 app.get('/', (req,res) => {
     res.send(`연결 성공 : localhost : ${port}`);
