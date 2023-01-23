@@ -6,13 +6,12 @@ import '../css/style.css';
 import $ from 'jquery';
 
 function Nav() {
-    // hamgurger 버튼 클릭 시, submenu 보이기
+    // 1. hamgurger 버튼 클릭 시, submenu 보이기
     const menuClick = () => {
         $('.wrap header .hamburger').toggleClass('active');
         $('.wrap .submenu').toggleClass('active');
     };
-
-    // submenu > menu 버튼 클릭 시, menu slide 영역으로 화면 이동하기 
+    // 2. submenu > menu 버튼 클릭 시, menu slide 영역으로 화면 이동하기 
     const click_menuSub = () => {
         $('.wrap header .hamburger').removeClass('active');
         $('.wrap .submenu').removeClass('active');
@@ -20,19 +19,16 @@ function Nav() {
             scrollTop : $('.sec1').offset().top
         },1000)
     }
-
-    // icon-box 영역 클릭 시, 로그인 및 회원가입 팝업창 띄우기
+    // 3. icon-box 영역 클릭 시, 로그인 및 회원가입 팝업창 띄우기
     const iconBox = () => {
         $('.wrap .loginBox').addClass('active');
     };
-    // closeBtn 클릭 시, 로그인 및 회원가입 팝업창 닫기
-    // $('.wrap .loginBox.active .login-txt .closeBtn').on('click',function(){
-    //     $('.wrap .loginBox').removeClass('active');
-    // });
-
+    // 4. closeBtn 클릭 시, 로그인 및 회원가입 팝업창 닫기
     const closeModal = () => {
         $('.wrap .loginBox').removeClass('active');
     }
+    // 5. 로그인 팝업창 입력 내용 axios 백단으로 보내기
+
 
     return (
         <div className="wrap">
@@ -66,10 +62,10 @@ function Nav() {
                     <div className="input-box">
                         <input type="text" placeholder='ID'/>
                         <input type="password" placeholder='Password' />
-                        <a className="submitBtn">로그인</a>
+                        <p className="submitBtn">로그인</p>
                     </div>
                     
-                    <a className='alarm'>회원가입하기</a>
+                    <p className='alarm'>회원가입하기</p>
                 </div>
             </div>
             
