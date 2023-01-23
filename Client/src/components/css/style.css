@@ -366,6 +366,13 @@
     width: 100px;
     height: 20px;
     z-index: 9;
+    transition: 0.3s;
+}
+
+/* slide 공통 스타일링 */
+.sec1 .mask .slide1 .slide .img-box{
+    cursor: pointer;
+    transition: 0.1s;
 }
 /* slide 내부 img 배경 추가 */
 .sec1 .mask .slide1 .slide:nth-child(1) .img-box{
@@ -440,6 +447,85 @@
     background: url(../img/밀크티푸딩.jpg) no-repeat center center;
     background-size: cover;
 }
+
+/* slider 영역 호버 시, 보여질 배경 img */
+.sec1 .mask .slide1 .slide:nth-child(1):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/조선향미푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(1):hover .tag{
+    scale: 1.2;
+    left: 10px;
+}
+.sec1 .mask .slide1 .slide:nth-child(2):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/바나나푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(3):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/바나나카라멜푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(4):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/베리치즈푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(5):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/다크초코푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(6):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/민트초코푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(7):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/제주말차푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(8):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/티라미수푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(9):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/인절미푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(10):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/흑임자푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(11):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/쑥푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+.sec1 .mask .slide1 .slide:nth-child(12):hover .img-box{
+    width: 200px;
+    height: 200px;
+    background: url(../img/밀크티푸딩메인.jpg) no-repeat center center;
+    background-size: cover;
+}
+
 .sec1 .slide1 .slide .txt-box{
     width: 200px;
     height: 30px;
