@@ -4,6 +4,7 @@ import {FullPage, Slide} from 'react-full-page';
 // css 연결
 import '../css/reset.css';
 import '../css/style.css';
+
 // jquey 연결
 import $ from 'jquery';
 
