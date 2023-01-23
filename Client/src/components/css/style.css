@@ -154,6 +154,10 @@
     font-family: 'Noto Serif Toto', serif;
     text-align: center;
     padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .banner .banner-box-right .txt-box p{
     text-transform: capitalize;
