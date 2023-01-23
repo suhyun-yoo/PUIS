@@ -40,86 +40,86 @@ function Main() {
                     <div className="mask">
                         <div className="slide-wrapper slide1">
                             <div className="slide">
-                                <p class="tag">SIGNATURE</p>
+                                <p className="tag">SIGNATURE</p>
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
                             </div>
                             <div className="slide">
                                 <div className="img-box"></div>
-                                <div class="txt-box">
+                                <div className="txt-box">
                                     <p>조선향미 푸딩</p>
                                     <span>4.3</span>
                                 </div>
