@@ -12,6 +12,13 @@ function Nav() {
         $('.wrap .submenu').toggleClass('active');
     };
 
+    const click_menuSub = () => {
+        $('.wrap header .hamburger').removeClass('active');
+        $('.wrap .submenu').removeClass('active');
+        $('html,body').animate({
+            scrollTop : $('.sec1').offset().top
+        },1000)
+    }
     // icon-box 영역 클릭 시, 로그인 및 회원가입 팝업창 띄우기
     
 
@@ -33,7 +40,7 @@ function Nav() {
             </header>
 
             <ul className="submenu">
-                <li>MENU</li>
+                <li onClick={click_menuSub}>MENU</li>
                 <li>REVIEW</li>
                 <li>ORDER</li>
             </ul>
