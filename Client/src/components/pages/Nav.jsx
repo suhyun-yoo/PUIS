@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 // css 연결
 import '../css/reset.css';
 import '../css/style.css';
 // jquey 연결
 import $ from 'jquery';
+// axios 연결
+import axios from 'axios';
 
 function Nav() {
     // 1. hamgurger 버튼 클릭 시, submenu 보이기
@@ -28,7 +30,29 @@ function Nav() {
         $('.wrap .loginBox').removeClass('active');
     }
     // 5. 로그인 팝업창 입력 내용 axios 백단으로 보내기
+    // 5-1. 입력창에 입력된 내용 변수에 담기
+    const [ID, setID] = useState('');
+    const [PW, setPW] = useState('');
 
+    const loginUser = (e) => {
+        e.preventDefault();
+        console.log(ID);
+        console.log(PW);
+
+        // 5-2. ID, PW 백단으로 넘기기
+        const url = 'http://localhost:5000/login';
+        const headers = {
+            'Content-Type' : 'application/json'
+        };
+        const body = {
+            'ID' : ID,
+            'PW' : PW
+        };
+        axios.post(url, body, {headers})
+        .then(res => {
+            console.log(res.data)
+        })
+    };
 
     return (
         <div className="wrap">
@@ -60,9 +84,9 @@ function Nav() {
                     </div>
                     <h2>Login</h2>
                     <div className="input-box">
-                        <input type="text" placeholder='ID'/>
-                        <input type="password" placeholder='Password' />
-                        <p className="submitBtn">로그인</p>
+                        <input type="text" placeholder='ID' onChange={(e) => setID(e.target.value)}/>
+                        <input type="password" placeholder='Password' onChange={(e) => setPW(e.target.value)} />
+                        <p className="submitBtn" onClick={loginUser}>로그인</p>
                     </div>
                     
                     <p className='alarm'>회원가입하기</p>
