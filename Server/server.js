@@ -30,6 +30,7 @@ app.use(cors({
 // ========== login 정보 받기 ==========
 app.post('/login', (req,res) => {
     console.log(req.body);
+    res.send({'result' : 'success'});
 });
 
 
