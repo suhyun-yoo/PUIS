@@ -12,6 +12,9 @@ function Nav() {
         $('.wrap .submenu').toggleClass('active');
     };
 
+    // icon-box 영역 클릭 시, 로그인 및 회원가입 팝업창 띄우기
+    
+
     return (
         <div className="wrap">
             <header>
@@ -34,6 +37,10 @@ function Nav() {
                 <li>REVIEW</li>
                 <li>ORDER</li>
             </ul>
+
+            <div className="loginBox">
+                <input type="text" placeholder='ID'/>
+            </div>
         </div>
     );
 }
