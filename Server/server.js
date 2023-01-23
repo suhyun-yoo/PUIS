@@ -34,6 +34,12 @@ app.post('/login', (req,res) => {
 });
 
 
+// ========== signup 정보 받기 ==========
+app.post('/signup', (req, res) => {
+    console.log(req.body);
+    res.send({'result' : 'success'});
+});
+
 
 // ========== 5000번 포트 연결 확인하기 ==========
 // http://localhost:5000/ 에서 응답 확인 가능

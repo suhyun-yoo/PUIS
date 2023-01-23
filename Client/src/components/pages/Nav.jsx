@@ -28,6 +28,7 @@ function Nav() {
     // 4. closeBtn 클릭 시, 로그인 및 회원가입 팝업창 닫기
     const closeModal = () => {
         $('.wrap .loginBox').removeClass('active');
+        $('.wrap .signupBox').removeClass('active');
     }
     // 5. 로그인 팝업창 입력 내용 axios 백단으로 보내기
     // 5-1. 입력창에 입력된 내용 변수에 담기
@@ -36,8 +37,6 @@ function Nav() {
 
     const loginUser = (e) => {
         e.preventDefault();
-        console.log(ID);
-        console.log(PW);
 
         // 5-2. ID, PW 백단으로 넘기기
         const url = 'http://localhost:5000/login';
@@ -51,6 +50,63 @@ function Nav() {
         axios.post(url, body, {headers})
         .then(res => {
             console.log(res.data.result);
+            // 전송 후, 입력창 초기화 및 팝업 닫기
+            setID('');
+            setPW('');
+            $('.wrap .loginBox').removeClass('active');
+        })
+    };
+
+    // 6. 회원가입하기 버튼 클릭 시, 회원가입 팝업창 띄우기
+    const signup = () => {
+        $('.wrap .loginBox').removeClass('active');
+        $('.wrap .signupBox').addClass('active');
+    };
+    // 6. 회원가입하기 버튼 클릭 시, 회원가입 팝업창 띄우기
+    const login = () => {
+        $('.wrap .loginBox').addClass('active');
+        $('.wrap .signupBox').removeClass('active');
+    };
+
+    // 7. 회원가입 팝업창 입력 내용 axios 백단으로 넘기기
+    // 7-1. 입력창에 입력된 내용 변수에 담기 (id pw는 앞서 선언했기 때문에 패스)
+    const [PWcheck, setPWcheck] = useState('');
+    const [Email, setEmail] = useState('');
+    const [Address, setAddress] = useState('');
+    const [Phone, setPhone] = useState('');
+
+    const signupUser = (e) => {
+        e.preventDefault();
+
+        // 7-2. ID, PW 백단으로 넘기기
+        const url = 'http://localhost:5000/signup';
+        const headers = {
+            'Content-Type' : 'application/json'
+        };
+        const body = {
+            'ID' : ID,
+            'PW' : PW,
+            'Email' : Email,
+            'Address' : Address,
+            'Phone' : Phone
+        };
+        axios.post(url, body, {headers})
+        .then(res => {
+            console.log(res.data.result);
+            // 회원가입 입력창 초기화
+            setID('');
+            setPW('');
+            setPWcheck('');
+            setEmail('');
+            setAddress('');
+            setPhone('');
+
+            // 회원가입 완료 알림창 띄우기
+            alert('회원가입 완료! 로그인하기')
+
+            // 로그인 팝업 띄우기
+            $('.wrap .signupBox').removeClass('active');
+            $('.wrap .loginBox').addClass('active');
         })
     };
 
@@ -71,12 +127,15 @@ function Nav() {
                 </div>
             </header>
 
+            {/* submenu 영역 */}
             <ul className="submenu">
                 <li onClick={click_menuSub}>MENU</li>
                 <li>REVIEW</li>
                 <li>ORDER</li>
             </ul>
 
+
+            {/* 로그인 팝업 */}
             <div className="loginBox">
                 <div className="login-txt">
                     <div className="closeBtn" onClick={closeModal}>
@@ -84,15 +143,36 @@ function Nav() {
                     </div>
                     <h2>Login</h2>
                     <div className="input-box">
-                        <input type="text" placeholder='ID' onChange={(e) => setID(e.target.value)}/>
-                        <input type="password" placeholder='Password' onChange={(e) => setPW(e.target.value)} />
+                        <input type="text" placeholder='ID' onChange={(e) => setID(e.target.value)} value={ID}/>
+                        <input type="password" placeholder='Password' onChange={(e) => setPW(e.target.value)} value={PW}/>
                         <p className="submitBtn" onClick={loginUser}>로그인</p>
                     </div>
-                    
-                    <p className='alarm'>회원가입하기</p>
+                    <p className='alarm' onClick={signup}>회원가입하기</p>
                 </div>
             </div>
             
+            {/* 회원가입 팝업 */}
+            <div className="signupBox">
+                <div className="signup-txt">
+                    <div className="closeBtn" onClick={closeModal}>
+                        <span></span><span></span>
+                    </div>
+                    <h2>Sign UP</h2>
+                    <div className="input-box">
+                        <input type="text" placeholder='ID' onChange={(e) => setID(e.target.value)} value={ID}/>
+                        <input type="password" placeholder='Password' onChange={(e) => setPW(e.target.value)} value={PW}/>
+                        <input type="password" placeholder='Password Check' onChange={(e) => setPWcheck(e.target.value)} value={PWcheck}/>
+                        <input type="email" placeholder='E - mail' onChange={(e) => setEmail(e.target.value)} value={Email}/>
+                        <input type="text" placeholder='Address' onChange={(e) => setAddress(e.target.value)} value={Address}/>
+                        <input type="text" placeholder='Phone' onChange={(e) => setPhone(e.target.value)} value={Phone}/>
+                        
+
+                        <p className="submitBtn" onClick={signupUser}>회원가입</p>
+                    </div>
+                    <p className='alarm' onClick={login}>로그인하기</p>
+                </div>
+            </div>
+
         </div>
     );
 }
