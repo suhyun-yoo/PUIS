@@ -181,7 +181,7 @@
     transform: rotate(-45deg);
     top: 50%;
 }
-/* 로그인 입력 창 */
+/* 로그인 및 회원가입 입력 창 */
 .wrap .loginBox.active .login-txt .input-box,
 .wrap .signupBox.active .signup-txt .input-box{
     width: 80%;
@@ -200,6 +200,10 @@
     border: none;
     border-bottom: 1px solid #000;
     padding-left: 10px;
+}
+.wrap .loginBox.active .login-txt .input-box input:focus::placeholder,
+.wrap .signupBox.active .signup-txt .input-box input:focus::placeholder{
+    opacity: 0;
 }
 .wrap .signupBox.active .signup-txt .input-box input{
     margin: 15px 0;
@@ -234,7 +238,6 @@
     margin-top: 10px;
     cursor: pointer;
 }
-
 
 
 
