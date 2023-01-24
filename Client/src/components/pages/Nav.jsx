@@ -74,8 +74,8 @@ function Nav() {
   // 7-1. 입력창에 입력된 내용 변수에 담기 (id pw는 앞서 선언했기 때문에 패스)
   const [PWcheck, setPWcheck] = useState("");
   const [Email, setEmail] = useState("");
-  const [Address, setAddress] = useState("");
-  const [Phone, setPhone] = useState("");
+  const [Address, setAddress] = useState();
+  const [Phone, setPhone] = useState();
 
   const signupUser = (e) => {
     e.preventDefault();
