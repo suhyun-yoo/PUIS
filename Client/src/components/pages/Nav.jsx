@@ -43,14 +43,14 @@ function Nav() {
 
     // 5-2. ID, PW 백단으로 넘기기
     const url = "http://localhost:5000/login";
-    const headers = {
-      "Content-Type": "application/json",
-    };
+    // const headers = {
+    //   "Content-Type": "application/json",
+    // };
     const body = {
       ID: ID,
       PW: PW,
     };
-    axios.post(url, body, { headers }).then((res) => {
+    axios.post(url, body).then((res) => {
       console.log(res.data.result);
       // 전송 후, 입력창 초기화 및 팝업 닫기
       setID("");
@@ -93,9 +93,9 @@ function Nav() {
     } else {
       // 7-3. 회원가입 정보 백단으로 넘기기
       const url = "http://localhost:5000/signup";
-      const headers = {
-        "Content-Type": "application/json",
-      };
+      //   const headers = {
+      //     "Content-Type": "application/json",
+      //   };
       const body = {
         ID: ID,
         PW: PW,
@@ -103,7 +103,7 @@ function Nav() {
         Address: Address,
         Phone: Phone,
       };
-      axios.post(url, body, { headers }).then((res) => {
+      axios.post(url, body).then((res) => {
         console.log(res.data.result);
         // 회원가입 입력창 초기화
         setID("");
