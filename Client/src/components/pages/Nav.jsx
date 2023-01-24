@@ -52,10 +52,18 @@ function Nav() {
     };
     axios.post(url, body).then((res) => {
       console.log(res.data.result);
-      // 전송 후, 입력창 초기화 및 팝업 닫기
-      setID("");
-      setPW("");
-      $(".wrap .loginBox").removeClass("active");
+      if(res.data.result === 'success'){
+        // 전송 후, 입력창 초기화 및 팝업 닫기
+        setID("");
+        setPW("");
+        $(".wrap .loginBox").removeClass("active");
+        alert('로그인 성공');
+      } else {
+        alert('확인 후 다시 로그인해주세요');
+        setID("");
+        setPW("");
+      }
+
     });
   };
 
@@ -84,13 +92,27 @@ function Nav() {
     if (PW !== PWcheck) {
       // 비밀번호 검사하기
       alert("비밀번호를 확인해주세요");
-    } else if (ID === "" || Email === "" || PW === "" || PWcheck === "") {
-      // 필수 입력값 검사하기
+    } else if (ID === "" || PW === "" || PWcheck === "" || Email === "") {
       alert("필수 입력창을 확인해주세요");
+      // 필수입력창 확인하기
+      if(ID === ""){
+        $('.wrap .signupBox.active .signup-txt .input-box input:nth-child(1)').addClass('essential');
+      };
+      if(PW === ""){
+        $('.wrap .signupBox.active .signup-txt .input-box input:nth-child(2)').addClass('essential');
+      };
+      if(PWcheck === ""){
+        $('.wrap .signupBox.active .signup-txt .input-box input:nth-child(3)').addClass('essential');
+      };
+      if(Email === ""){
+        $('.wrap .signupBox.active .signup-txt .input-box input:nth-child(4)').addClass('essential');
+      };
     } else if (Email.includes("@") === false) {
       // 이메일 검사하기
       alert("[example@naver.com] 형식으로 입력해주세요");
     } else {
+      $('.wrap .signupBox.active .signup-txt .input-box input').removeClass('essential');
+
       // 7-3. 회원가입 정보 백단으로 넘기기
       const url = "http://localhost:5000/signup";
       //   const headers = {
@@ -110,8 +132,8 @@ function Nav() {
         setPW("");
         setPWcheck("");
         setEmail("");
-        setAddress("");
-        setPhone("");
+        setAddress();
+        setPhone();
 
         // 회원가입 완료 알림창 띄우기
         alert("회원가입 완료! 로그인하기");

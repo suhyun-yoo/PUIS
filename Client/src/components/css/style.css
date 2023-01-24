@@ -201,12 +201,14 @@
     border-bottom: 1px solid #000;
     padding-left: 10px;
 }
-.wrap .loginBox.active .login-txt .input-box input:focus::placeholder,
-.wrap .signupBox.active .signup-txt .input-box input:focus::placeholder{
-    opacity: 0;
-}
 .wrap .signupBox.active .signup-txt .input-box input{
     margin: 15px 0;
+}
+.wrap .signupBox.active .signup-txt .input-box input.essential::placeholder{
+    color: rgba(255, 0, 0, 0.414);
+}
+.wrap .signupBox.active .signup-txt .input-box input.essential{
+    border-bottom: 1px solid rgba(255, 0, 0, 0.414);
 }
 /* 로그인 및 회원가입 버튼 */
 .wrap .loginBox.active .login-txt .input-box .submitBtn,
