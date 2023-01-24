@@ -15,7 +15,8 @@ const mysql = require("mysql");
 var db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "9616",
+  // password: "9616",
+  password : "suhyun614!",
   database: "puis",
   // mysql 다중 쿼리 작성을 위해 추가
   multipleStatements: true,
