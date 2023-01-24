@@ -12,6 +12,10 @@
     background-color: #BEC9A6;
     font-family: 'Noto Serif Toto', serif;
 }
+.wrap header.active{
+    background-color: transparent;
+    color: #e8ecdf;
+}
 .wrap header .container{
     width: 95%;
     height: 100%;
@@ -296,561 +300,215 @@
     background-size: cover;
 }
 
-/* ========== section1 영역 ============ */
+/* section2 영역 */
 .sec1{
     width: 100%;
-    height: 100%;
-    padding: 100px 120px;
-    box-sizing: border-box;
+    height: 100vh;
 }
-.sec1 h2{
-    font-family: 'Noto Serif Toto', serif;
-    padding-left: 20px;
-    font-size: 1.5rem;
-}
-.sec1 p{
+/* 1. sec-head */
+.sec1 .sec1-head{
     width: 100%;
-    margin: 0 auto;
-    text-align: end;
-    font-size: 1.3rem;
-    font-family: 'Noto Serif Toto', serif;
-    color: #A5AFA5;
-}
-/* 1. slide 박스 */
-.sec1 .mask{
-    width: 100%;
-    height: 50%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    overflow: hidden;
-    display: flex;
-}
-.sec1 .mask .slide-wrapper{
-    width: 5020px;
-    height: 100%;
-    border-top: 1px solid black;
+    height: 60%;
+    background : url(../img/dark-main2.jpg) no-repeat center center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
-    animation: swiper1 30s infinite steps(12);
 }
-/* 무한 자동 슬라이드 */
+.sec2 .sec2-head{
+    width: 100%;
+    height: 60%;
+    background : url(../img/dark-main1.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec1 .sec1-head .txt-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f1f2f0;
+    text-align: center;
+}
+.sec1 .sec1-head .txt-box h2{
+    font-family: 'Noto Serif Toto', serif;
+    font-size: 50px;
+    padding-bottom: 10px;
+    text-transform : capitalize;
+}
+.sec1 .sec1-head .txt-box p{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+
+/* 2. sec-body */
+.sec1 .sec1-body,
+.sec2 .sec2-body{
+    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+}
+.sec1 .sec1-body .slide-wrap-outer,
+.sec2 .sec2-body .slide-wrap-outer{
+    width: 1000px;
+    margin: 0 auto;
+    height: 40%;
+    overflow: hidden;
+}
+.sec1 .sec1-body .slide-wrap{
+    width: 2400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+    animation: swiper1 30s infinite steps(7);
+}
 @keyframes swiper1{
     to{
-        transform: translateX(-2520px);
+        transform: translateX(-1400px);
     }
 }
-.sec1 .mask .slide-wrapper.slide2{
-    width: 4180px;
-    height: 100%;
-    animation: swiper2 30s infinite steps(10);
+.sec2 .sec2-body .slide-wrap{
+    width: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+    animation: swiper2 30s infinite steps(5);
 }
 @keyframes swiper2{
     to{
-        transform: translateX(-2100);
+        transform: translateX(-1000px);
     }
 }
-/* 슬라이드 영역에 마우스 호버 시, 애니메이션 잠시 멈추기 */
-.sec1 .mask:hover .slide-wrapper{
+.sec1 .sec1-body .slide-wrap-outer:hover .slide-wrap,
+.sec2 .sec2-body .slide-wrap-outer:hover .slide-wrap{
     animation-play-state: paused;
 }
-.sec1 .mask .slide-wrapper .slide p,
-.sec1 .mask .slide-wrapper .slide span{
-    font-size: 1rem;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
-    color: #000;
-}
-.sec1 .mask .slide-wrapper .slide span{
-    color: #A5AFA5;
-    font-weight: 200;
-}
-.sec1 .mask .slide-wrapper .slide{
+.sec1 .sec1-body .slide-wrap .slide,
+.sec2 .sec2-body .slide-wrap .slide{
     width: 200px;
-    height: 220px;
-    margin-right: 10px;
-    position: relative;
+    height: 250px;
+    margin: 10px;
 }
-.sec1 .mask .slide1 .slide .tag{
-    position: absolute;
-    top: 10px;
-    left: 0;
-    text-align: center;
-    line-height: 20px;
-    background-color: #94A66D;
-    color: #E8ECDF;
-    width: 100px;
-    height: 20px;
-    z-index: 9;
+
+/* sec1-body > img-box 호버 시, img 변경 */
+.sec1 .sec1-body .slide-wrap .slide .img-box img{
     transition: 0.3s;
 }
-
-/* slide 공통 스타일링 */
-.sec1 .mask .slide-wrapper .slide .img-box{
-    cursor: pointer;
-    transition: 0.1s;
-}
-/* slide 내부 img 배경 추가 */
-.sec1 .mask .slide1 .slide:nth-child(1) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/조선향미푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(2) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/바나나푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(3) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/바나나카라멜푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(4) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/베리치즈푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(5) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/다크초코푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(6) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/민트초코푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(7) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/제주말차푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(8) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/티라미수푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(9) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/인절미푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(10) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/흑임자푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(11) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/쑥푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide1 .slide:nth-child(12) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/밀크티푸딩.jpg) no-repeat center center;
-    background-size: cover;
-}
-
-/* slider 영역 호버 시, 보여질 배경 img */
-.sec1 .mask .slide1 .slide:nth-child(1):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(1) .img-box{
     background: url(../img/조선향미푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(1):hover .tag{
-    scale: 1.2;
-    left: 10px;
-}
-.sec1 .mask .slide1 .slide:nth-child(2):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(2) .img-box{
     background: url(../img/바나나푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(3):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(3) .img-box{
     background: url(../img/바나나카라멜푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(4):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(4) .img-box{
     background: url(../img/베리치즈푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(5):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(5) .img-box{
     background: url(../img/다크초코푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(6):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(6) .img-box{
     background: url(../img/민트초코푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(7):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(7) .img-box{
     background: url(../img/제주말차푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(8):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(8) .img-box{
     background: url(../img/티라미수푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(9):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(9) .img-box{
     background: url(../img/인절미푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(10):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(10) .img-box{
     background: url(../img/흑임자푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(11):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(11) .img-box{
     background: url(../img/쑥푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-.sec1 .mask .slide1 .slide:nth-child(12):hover .img-box{
-    width: 200px;
-    height: 200px;
+.sec1 .sec1-body .slide-wrap .slide:nth-child(12) .img-box{
     background: url(../img/밀크티푸딩메인.jpg) no-repeat center center;
     background-size: cover;
 }
-
-.sec1 .slide-wrapper .slide .txt-box{
-    width: 200px;
-    height: 30px;
-    padding: 0 5px;
-    line-height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.sec1 .sec1-body .slide-wrap .slide:hover .img-box img{
+    opacity: 0;
 }
-.sec1 .slide-wrapper .slide .txt-box p{
-    text-align: start;
-}
-
-/* slide2 영역 */
-/* slide 내부 img 배경 추가 */
-.sec1 .mask .slide2 .slide:nth-child(1) .img-box{
-    width: 200px;
+.sec1 .sec1-body .slide-wrap .slide .img-box,
+.sec2 .sec2-body .slide-wrap .slide .img-box{
+    width: 100%;
     height: 200px;
-    background: url(../img/플레인휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
+    object-fit: cover;
+    cursor: pointer;
 }
-.sec1 .mask .slide2 .slide:nth-child(2) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/마카다미아휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
+.sec1 .sec1-body .slide-wrap .slide .txt-box,
+.sec2 .sec2-body .slide-wrap .slide .txt-box{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
 }
-.sec1 .mask .slide2 .slide:nth-child(3) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/스카치헤이즐넛휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
+.sec1 .sec1-body .slide-wrap .slide .txt-box p,
+.sec2 .sec2-body .slide-wrap .slide .txt-box p{
+    font-size: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    transition: 0.3s;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
-.sec1 .mask .slide2 .slide:nth-child(4) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/아몬드카라멜휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
+.sec1 .sec1-body .slide-wrap .slide .txt-box:hover p,
+.sec2 .sec2-body .slide-wrap .slide .txt-box:hover p{
+    text-decoration: underline;
 }
-.sec1 .mask .slide2 .slide:nth-child(5) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/레몬홍차휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide2 .slide:nth-child(6) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/소금초코휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide2 .slide:nth-child(7) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/코코넛휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide2 .slide:nth-child(8) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/흑임자휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide2 .slide:nth-child(9) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/바질치즈휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
-}
-.sec1 .mask .slide2 .slide:nth-child(10) .img-box{
-    width: 200px;
-    height: 200px;
-    background: url(../img/애플크럼블휘낭시에.jpg) no-repeat center center;
-    background-size: cover;
+.sec1 .sec1-body .slide-wrap .slide .txt-box span,
+.sec2 .sec2-body .slide-wrap .slide .txt-box span{
+    font-size: 0.8rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    color: #A5AFA5;
 }
 
-@media (min-width : 2510px) {
-    /* 슬라이드 멈추기 및 가리기 */
-    .sec1 .mask .slide-wrapper:nth-child(2){
-        display: none;
-    }
-    .sec1 .mask .slide-wrapper{
-        padding-left: 300px;
-        animation: none;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
-    /* 슬라이드 img 크키값 변경 */
-    .sec1 .mask .slide-wrapper .slide{
-        width: 400px;
-        height: 300px;
-    }
-
-    /* slide1 */
-    .sec1 .mask .slide1 .slide:nth-child(1) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/조선향미푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(2) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/바나나푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(3) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/바나나카라멜푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(4) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/베리치즈푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(5) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/다크초코푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(6) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/민트초코푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(7) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/제주말차푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(8) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/티라미수푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(9) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/인절미푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(10) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/흑임자푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(11) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/쑥푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(12) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/밀크티푸딩.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(1):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/조선향미푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(2):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/바나나푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(3):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/바나나카라멜푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(4):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/베리치즈푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(5):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/다크초코푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(6):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/민트초코푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(7):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/제주말차푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(8):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/티라미수푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(9):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/인절미푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(10):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/흑임자푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(11):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/쑥푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide1 .slide:nth-child(12):hover .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/밀크티푸딩메인.jpg) no-repeat center center;
-        background-size: cover;
-    }
-
-    /* slide2 */
-    .sec1 .mask .slide2 .slide:nth-child(1) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/플레인휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(2) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/마카다미아휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(3) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/스카치헤이즐넛휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(4) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/아몬드카라멜휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(5) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/레몬홍차휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(6) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/소금초코휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(7) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/코코넛휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(8) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/흑임자휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(9) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/바질치즈휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .mask .slide2 .slide:nth-child(10) .img-box{
-        width: 250px;
-        height: 250px;
-        background: url(../img/애플크럼블휘낭시에.jpg) no-repeat center center;
-        background-size: cover;
-    }
-    .sec1 .slide-wrapper .slide .txt-box{
-        width: 250px;
-        height: 30px;
-        padding: 0 5px;
-        line-height: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+/* slide btn */
+.prevBtn,
+.nextBtn{
+    width: 30px;
+    height: 50px;
+    background-color: #7d8e572f;
+    text-align: center;
+    font-size: 30px;
+    color: #7d8e57;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.nextBtn{
+    right: 0;
+}
+.prevBtn::after{
+    content: '<';
+}
+.nextBtn::after{
+    content: '>';
 }
