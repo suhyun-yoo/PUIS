@@ -594,7 +594,7 @@ aside .sideBtn .imgBox{
 .sideBtn-menu-wrap .sideBtn-menu.active{
     transform: translate(0, 0);
 }
-.sideBtn-menu-wrap .sideBtn-menu a{
+.sideBtn-menu-wrap .sideBtn-menu p{
     position: absolute;
     width: 40px;
     height: 40px;
@@ -605,23 +605,24 @@ aside .sideBtn .imgBox{
     line-height: 40px;
     font-size: 0.5rem;
     transition: 0.3s;
+    cursor: pointer;
 }
-.sideBtn-menu-wrap .sideBtn-menu a:hover{
+.sideBtn-menu-wrap .sideBtn-menu p:hover{
     background-color: #94a66d83;
 }
-.sideBtn-menu-wrap .sideBtn-menu a:nth-child(1){
+.sideBtn-menu-wrap .sideBtn-menu p:nth-child(1){
     right: 0;
     top: 0;
 }
-.sideBtn-menu-wrap .sideBtn-menu a:nth-child(2){
+.sideBtn-menu-wrap .sideBtn-menu p:nth-child(2){
     right: 45px;
     top: 10px;
 }
-.sideBtn-menu-wrap .sideBtn-menu a:nth-child(3){
+.sideBtn-menu-wrap .sideBtn-menu p:nth-child(3){
     left: 15px;
     top: 45px;
 }
-.sideBtn-menu-wrap .sideBtn-menu a:nth-child(4){
+.sideBtn-menu-wrap .sideBtn-menu p:nth-child(4){
     left: 0;
     bottom: 0;
 }
