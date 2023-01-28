@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+.full-page-controls{
+    display: none;
+}
+
 /* ========== nav 영역 ========== */
 /* 1. header */
 .wrap header{
