@@ -8,12 +8,25 @@ import $ from "jquery";
 import axios from "axios";
 
 function Nav() {
-  // 1. hamgurger 버튼 클릭 시, submenu 보이기
+  // 1. window 스크롤 발생 시, 위치값에 따라 header 영역에 active 클래스 추가 및 제거하기
+  $(window).on('scroll', function(){
+    let sct = $(window).scrollTop();
+    const sec1 = $('.sec1').offset().top -5;
+    // console.log(sec1);
+    // console.log(sct);
+    if(sct >= sec1){
+      $('.wrap header').addClass('active');
+    } else {
+      $('.wrap header').removeClass('active');
+    }
+  })
+
+  // 2. hamgurger 버튼 클릭 시, submenu 보이기
   const menuClick = () => {
     $(".wrap header .hamburger").toggleClass("active");
     $(".wrap .submenu").toggleClass("active");
   };
-  // 2. submenu > menu 버튼 클릭 시, menu slide 영역으로 화면 이동하기
+  // 3. submenu > menu 버튼 클릭 시, menu slide 영역으로 화면 이동하기
   const click_menuSub = () => {
     $(".wrap header .hamburger").removeClass("active");
     $(".wrap .submenu").removeClass("active");
@@ -24,24 +37,24 @@ function Nav() {
       1000
     );
   };
-  // 3. icon-box 영역 클릭 시, 로그인 및 회원가입 팝업창 띄우기
+  // 4. icon-box 영역 클릭 시, 로그인 및 회원가입 팝업창 띄우기
   const iconBox = () => {
     $(".wrap .loginBox").addClass("active");
   };
-  // 4. closeBtn 클릭 시, 로그인 및 회원가입 팝업창 닫기
+  // 5. closeBtn 클릭 시, 로그인 및 회원가입 팝업창 닫기
   const closeModal = () => {
     $(".wrap .loginBox").removeClass("active");
     $(".wrap .signupBox").removeClass("active");
   };
-  // 5. 로그인 팝업창 입력 내용 axios 백단으로 보내기
-  // 5-1. 입력창에 입력된 내용 변수에 담기
+  // 6. 로그인 팝업창 입력 내용 axios 백단으로 보내기
+  // 6-1. 입력창에 입력된 내용 변수에 담기
   const [ID, setID] = useState("");
   const [PW, setPW] = useState("");
 
   const loginUser = (e) => {
     e.preventDefault();
 
-    // 5-2. ID, PW 백단으로 넘기기
+    // 6-2. ID, PW 백단으로 넘기기
     const url = "http://localhost:5000/login";
     // const headers = {
     //   "Content-Type": "application/json",
@@ -67,19 +80,19 @@ function Nav() {
     });
   };
 
-  // 6. 회원가입하기 버튼 클릭 시, 회원가입 팝업창 띄우기
+  // 7. 회원가입하기 버튼 클릭 시, 회원가입 팝업창 띄우기
   const signup = () => {
     $(".wrap .loginBox").removeClass("active");
     $(".wrap .signupBox").addClass("active");
   };
-  // 6. 회원가입하기 버튼 클릭 시, 회원가입 팝업창 띄우기
+  // 8. 회원가입하기 버튼 클릭 시, 회원가입 팝업창 띄우기
   const login = () => {
     $(".wrap .loginBox").addClass("active");
     $(".wrap .signupBox").removeClass("active");
   };
 
-  // 7. 회원가입 팝업창 입력 내용 유효성 검사 후, axios 백단으로 넘기기
-  // 7-1. 입력창에 입력된 내용 변수에 담기 (id pw는 앞서 선언했기 때문에 패스)
+  // 9. 회원가입 팝업창 입력 내용 유효성 검사 후, axios 백단으로 넘기기
+  // 9-1. 입력창에 입력된 내용 변수에 담기 (id pw는 앞서 선언했기 때문에 패스)
   const [PWcheck, setPWcheck] = useState("");
   const [Email, setEmail] = useState("");
   const [Address, setAddress] = useState();
@@ -88,7 +101,7 @@ function Nav() {
   const signupUser = (e) => {
     e.preventDefault();
 
-    // 7-2. 입력값 검사하기
+    // 9-2. 입력값 검사하기
     if (PW !== PWcheck) {
       // 비밀번호 검사하기
       alert("비밀번호를 확인해주세요");
@@ -113,7 +126,7 @@ function Nav() {
     } else {
       $('.wrap .signupBox.active .signup-txt .input-box input').removeClass('essential');
 
-      // 7-3. 회원가입 정보 백단으로 넘기기
+      // 9-3. 회원가입 정보 백단으로 넘기기
       const url = "http://localhost:5000/signup";
       //   const headers = {
       //     "Content-Type": "application/json",
@@ -144,6 +157,13 @@ function Nav() {
       });
     }
   };
+
+  // 10. logo 클릭 시, html 문서 최상단으로 이동하기
+  $('.wrap header .logo').on('click', function(){
+    $('html, body').animate({
+      scrollTop : 0
+    }, 1000)
+  });
 
   return (
     <div className="wrap">
