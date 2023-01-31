@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-.full-page-controls{
-    display: none;
-}
-
 /* ========== nav 영역 ========== */
 /* 1. header */
 .wrap header{
@@ -249,6 +245,38 @@
     cursor: pointer;
 }
 
+/* ========== fullpage slide 버튼 영역 ========== */
+.full-page-controls{
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 60px;
+}
+.full-page-controls button{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.full-page-controls button:nth-child(2),
+.full-page-controls button:nth-child(3),
+.full-page-controls button:nth-child(4){
+    background-color: #7d8e574d;
+    border-radius: 50%;
+    color: transparent;
+}
+.full-page-controls button:disabled{
+    background-color: #7d8e57;
+}
+.full-page-controls button:nth-child(1),
+.full-page-controls button:last-child{
+    display: none;
+}
 
 /* ========== banner 영역 ========== */
 .banner{
