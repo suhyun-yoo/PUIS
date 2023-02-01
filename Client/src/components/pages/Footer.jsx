@@ -16,13 +16,13 @@ function Footer() {
             <div className="footer-left-top"><span>PUIS</span> DESSERT</div>
             <div className="footer-left-middle">TEL : 010-4111-2238</div>
             <div className="footer-left-bottom">
-              <a className="footer-icon" href="https://www.instagram.com/__puis/" target="_blank">
+              <a className="footer-icon" href="https://www.instagram.com/__puis/" target="_blank" rel="noreferrer">
                 <img src={instagram} alt="instagram icon" />
               </a>
-              <a className="footer-icon" href="https://smartstore.naver.com/__puis" target="_blank">
+              <a className="footer-icon" href="https://smartstore.naver.com/__puis" target="_blank" rel="noreferrer">
                 <p>N</p>
               </a>
-              <a className="footer-icon" href="https://open.kakao.com/" target="_blank">
+              <a className="footer-icon" href="https://open.kakao.com/" target="_blank" rel="noreferrer">
                 <img src={kakaoTalk} alt="kakao-talk icon"/>
               </a>
             </div>
@@ -32,7 +32,7 @@ function Footer() {
           <p>대표자 : 선승완</p>
           <p>사업자등록번호 : 3880302461</p>
           <p>사업장 소재지 : 경기도 고양시 일산로316번길 53-6</p>
-          <p>E-mail : topsum416@naver.com</p>
+          <p>E-mail : topsun416@naver.com</p>
         </div>
     </footer>
   );
