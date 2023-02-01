@@ -32,8 +32,8 @@ function SideBar() {
     });
 
     // 3. ask 버튼
-    $('aside .sideBtn-menu-wrap .sideBtn-menu p:nth-child(2)').off('click').on('click', function(){
-        alert('문의하기 페이지로 이동')
+    $('aside .sideBtn-menu-wrap .sideBtn-menu p:nth-child(3)').off('click').on('click', function(){
+        alert('문의하기 페이지로 이동');
         $('.sideBtn-menu-wrap .sideBtn-menu').removeClass('active');
     });
 
