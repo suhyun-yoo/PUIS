@@ -35,12 +35,12 @@ import financier10 from '../img/애플크럼블휘낭시에.jpg';
 import $ from "jquery";
 
 function Main() {
-  // slide > prevBtn 클릭 시, x축 -200px씩 이동
-  // $('.sec2 .sec2-body .prevBtn').on('click', function(){
-  //   $('.sec2 .sec2-body .slide-wrap').animate({
-  //     transform : 'translateX(-200px)'
-  //   })
-  // });
+  // slide > nextBtn 클릭 시, x축 200px씩 이동
+  $('.sec1 .sec1-body .nextBtn').off('click').on('click', function(){
+    $('.sec1 .sec1-body .slide-wrap-outer .slide-wrap').animate({
+      transform : 'translateX(-220px)'
+    })
+  });
 
   return (
     <FullPage controls>
@@ -73,11 +73,12 @@ function Main() {
             </div>
           </div>
           <div className="sec1-body">
-            {/* <div className="prevBtn"></div> */}
+            <div className="prevBtn"></div>
             <div className="slide-wrap-outer">
               <div className="slide-wrap">
                 <div className="slide">
                   <div className="img-box">
+                    <p className="tag">Signature</p>
                     <img src={pudding1} alt="조선향미푸딩" title="조선향미푸딩"/>
                   </div>
                   <div className="txt-box">
@@ -186,7 +187,7 @@ function Main() {
                 </div>
               </div>
             </div>
-            {/* <div className="nextBtn"></div> */}
+            <div className="nextBtn"></div>
           </div>
         </section>
       </Slide>
@@ -202,7 +203,7 @@ function Main() {
             </div>
           </div>
           <div className="sec2-body">
-            {/* <div className="prevBtn"></div> */}
+            <div className="prevBtn"></div>
             <div className="slide-wrap-outer">
               <div className="slide-wrap">
                 <div className="slide">
@@ -297,7 +298,7 @@ function Main() {
                 </div>
               </div>
             </div>
-            {/* <div className="nextBtn"></div> */}
+            <div className="nextBtn"></div>
           </div>
         </section>
       </Slide>
