@@ -42,7 +42,47 @@ function Main() {
     })
   });
 
+  // window 화면의 위치값에 따라 slide-page-btn 영역 활성화 및 제거
+  const wh = $(window).height();
+  // const slideBtns = $('.slide-page-btns .page-btn');
+
+  $(window).on('scroll', function(){
+    let sct = $(window).scrollTop();
+    console.log('sct : ', sct);
+    console.log('height : ', wh);
+
+    if(sct < wh){
+      $('.slide-page-btns .page-btn:nth-child(1)').addClass('active');
+      $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
+    } else if(sct === wh){
+      $('.slide-page-btns .page-btn:nth-child(2)').addClass('active');
+      $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
+    } else if(sct === wh*2){
+      $('.slide-page-btns .page-btn:nth-child(3)').addClass('active');
+      $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
+    } else if(sct > wh*3){
+      $('.slide-page-btns .page-btn:nth-child(4)').addClass('active');
+      $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
+      $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
+    }
+  });
+
+  // slide-page-btns > page-btn 클릭 시, 해당 영역 이동하기
+  $(document).on('click', '.slide-page-btns .page-btn:nth-child(2)', function(){
+    $('html, body').animate({
+      scrollTop : wh
+    }, 1000);
+  });
+
   return (
+    <>
     <FullPage controls>
       {/* banner 영역 */}
       <Slide>
@@ -303,6 +343,14 @@ function Main() {
         </section>
       </Slide>
     </FullPage>
+
+    <div className="slide-page-btns">
+      <div className="page-btn active"></div>
+      <div className="page-btn"></div>
+      <div className="page-btn"></div>
+      <div className="page-btn"></div>
+    </div>
+    </>
   );
 }
 
