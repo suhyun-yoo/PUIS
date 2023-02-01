@@ -432,6 +432,20 @@
     height: 250px;
     margin: 10px;
 }
+.sec1 .sec1-body .slide-wrap .slide .img-box{
+    position: relative;
+}
+.sec1 .sec1-body .slide-wrap .slide .img-box .tag{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background-color: #7d8e57;
+    color: #d3dac3;
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    text-align: center;
+}
 
 /* sec1-body > img-box 호버 시, img 변경 */
 .sec1 .sec1-body .slide-wrap .slide .img-box img{
@@ -538,6 +552,10 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    z-index: 99;
+}
+.prevBtn{
+    left: 0;
 }
 .nextBtn{
     right: 0;
