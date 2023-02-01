@@ -8,12 +8,13 @@ import $ from "jquery";
 function SideBar() {  
     // sideBtn 클릭 시, 이벤트 버블링이 발생하여 중복 클릭됨.
     // click 이벤트만 제거할 수 있도록 .off('click') 추가하여 구현
-    $('.sideBtn').off('click').on('click', function(){
+    // 리액트에서 제이쿼리 클릭 이벤트 작성 시, 새로고침후에는 실행이 되지 않는 문제점 발생 -> $(document).on('click', '선택자', function(){})의 형식으로 작성하면 해결
+    $(document).off('click').on('click', '.sideBtn',function(){
         const sideBtn = $('.sideBtn-menu-wrap .sideBtn-menu');
         if(sideBtn.hasClass('active')){
-            $('.sideBtn-menu-wrap .sideBtn-menu').removeClass('active');
+            sideBtn.removeClass('active');
         } else{
-            $('.sideBtn-menu-wrap .sideBtn-menu').addClass('active');
+            sideBtn.addClass('active');
         }
     });
 
