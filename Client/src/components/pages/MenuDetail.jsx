@@ -10,7 +10,9 @@ import $ from "jquery";
 function MenuDetail() {
     return (
     <div className="menuDetail">
-      <h1>MENU DETAIL</h1>
+      <div className="menuDetail-head"></div>
+      <div className="menuDetail-body"></div>
+      <div className="menuDetail-bottom"></div>
     </div>
   );
 }
