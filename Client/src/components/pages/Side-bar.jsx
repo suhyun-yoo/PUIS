@@ -19,18 +19,18 @@ function SideBar() {
     });
 
     // 1. top 버튼
-    $('aside .sideBtn-menu-wrap .sideBtn-menu p:nth-child(1)').off('click').on('click', function(){
+    $(document).on('click', 'aside .sideBtn-menu-wrap .sideBtn-menu p:nth-child(1)', function(){
         $('html,body').animate({
             scrollTop : 0
         }, 1000);
         $('.sideBtn-menu-wrap .sideBtn-menu').removeClass('active');
-    });
+    })
 
     // 2. menu 버튼
-    $('aside .sideBtn-menu-wrap .sideBtn-menu p:nth-child(2)').off('click').on('click', function(){
+    $(document).on('click','aside .sideBtn-menu-wrap .sideBtn-menu p:nth-child(2)', function(){
         alert('오늘의 메뉴 라인업 페이지 이동');
         $('.sideBtn-menu-wrap .sideBtn-menu').removeClass('active');
-    });
+    })
 
     // 3. ask 버튼
     $('aside .sideBtn-menu-wrap .sideBtn-menu p:nth-child(3)').off('click').on('click', function(){
