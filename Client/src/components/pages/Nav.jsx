@@ -11,13 +11,14 @@ function Nav() {
   // 1. window 스크롤 발생 시, 위치값에 따라 header 영역에 active 클래스 추가 및 제거하기
   $(window).on('scroll', function(){
     let sct = $(window).scrollTop();
-    const sec1 = $('.sec1').offset().top -5;
+    // const sec1 = $('.sec1').offset().top -5;
     // console.log(sec1);
     // console.log(sct);
-    if(sct >= sec1){
+    const wh = $(window).height();
+    if(sct > wh){
       $('.wrap header').addClass('active');
-    } else {
-      $('.wrap header').removeClass('active');
+    } else if(sct === 0){
+     $('.wrap header').removeClass('active');
     }
   })
 
@@ -174,7 +175,7 @@ function Nav() {
             <span></span>
             <span></span>
           </div>
-          <div className="logo"> PUIS </div>
+          <a href="/"><div className="logo"> PUIS </div></a>
           <div className="icon-box" onClick={iconBox}>
             <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
               <path

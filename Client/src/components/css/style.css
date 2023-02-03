@@ -247,6 +247,33 @@
 
 /* ========== fullpage slide 버튼 영역 ========== */
 .full-page-controls{
+    display: none;
+}
+
+.slide-page-btns{
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.slide-page-btns .page-btn{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #7d8e574d;
+}
+.slide-page-btns .page-btn.active{
+    background-color: #7d8e57;
+}
+
+/* .full-page-controls{
     position: fixed;
     top: 50%;
     right: 10px;
@@ -276,7 +303,7 @@
 .full-page-controls button:nth-child(1),
 .full-page-controls button:last-child{
     display: none;
-}
+} */
 
 /* ========== banner 영역 ========== */
 .banner{
@@ -431,6 +458,7 @@
     width: 200px;
     height: 250px;
     margin: 10px;
+    cursor: pointer;
 }
 .sec1 .sec1-body .slide-wrap .slide .img-box{
     position: relative;
@@ -507,14 +535,12 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
-    cursor: pointer;
 }
 .sec1 .sec1-body .slide-wrap .slide .txt-box,
 .sec2 .sec2-body .slide-wrap .slide .txt-box{
     width: 100%;
     height: 50px;
     text-align: center;
-    cursor: pointer;
 }
 .sec1 .sec1-body .slide-wrap .slide .txt-box p,
 .sec2 .sec2-body .slide-wrap .slide .txt-box p{

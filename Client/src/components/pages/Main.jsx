@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 // 풀페이지 연결
 import { FullPage, Slide } from "react-full-page";
 // css 연결
@@ -35,14 +37,37 @@ import financier10 from '../img/애플크럼블휘낭시에.jpg';
 import $ from "jquery";
 
 function Main() {
-  // slide > nextBtn 클릭 시, x축 200px씩 이동
-  $('.sec1 .sec1-body .nextBtn').off('click').on('click', function(){
-    $('.sec1 .sec1-body .slide-wrap-outer .slide-wrap').animate({
-      transform : 'translateX(-220px)'
-    })
-  });
-
+    // window 화면의 위치값에 따라 slide-page-btn 영역 활성화 및 제거
+    const wh = $(window).height();
+    $(window).on('scroll', function(){
+      let sct = $(window).scrollTop();
+      // console.log('sct : ', sct);
+      // console.log('height : ', wh);
+  
+      if(sct < wh){
+        $('.slide-page-btns .page-btn:nth-child(1)').addClass('active');
+        $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
+      } else if(sct === wh){
+        $('.slide-page-btns .page-btn:nth-child(2)').addClass('active');
+        $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
+      } else if(sct === wh*2){
+        $('.slide-page-btns .page-btn:nth-child(3)').addClass('active');
+        $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
+      } else if(sct > wh*3){
+        $('.slide-page-btns .page-btn:nth-child(4)').addClass('active');
+        $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
+        $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
+      }
+    });
   return (
+    <>
     <FullPage controls>
       {/* banner 영역 */}
       <Slide>
@@ -76,7 +101,8 @@ function Main() {
             <div className="prevBtn"></div>
             <div className="slide-wrap-outer">
               <div className="slide-wrap">
-                <div className="slide">
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <p className="tag">Signature</p>
                     <img src={pudding1} alt="조선향미푸딩" title="조선향미푸딩"/>
@@ -85,8 +111,10 @@ function Main() {
                     <p>조선향미 푸딩</p>
                     <span>4.3</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link href="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding2} alt="바나나푸딩" title="바나나푸딩"/>
                   </div>
@@ -94,8 +122,10 @@ function Main() {
                     <p>바나나 푸딩</p>
                     <span>4.0</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding3} alt="바나나카라멜푸딩" title="바나나카라멜푸딩"/>
                   </div>
@@ -103,8 +133,10 @@ function Main() {
                     <p>바나나카라멜 푸딩</p>
                     <span>4.5</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding4} alt="베리치즈푸딩" title="베리치즈푸딩"/>
                   </div>
@@ -112,8 +144,10 @@ function Main() {
                     <p>베리치즈 푸딩</p>
                     <span>5.3</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding5} alt="다크초코푸딩" title="다크초코푸딩"/>
                   </div>
@@ -121,8 +155,10 @@ function Main() {
                     <p>다크초코 푸딩</p>
                     <span>5.0</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding6} alt="민트초코푸딩" title="민트초코푸딩"/>
                   </div>
@@ -130,8 +166,10 @@ function Main() {
                     <p>민트초코 푸딩</p>
                     <span>4.5</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding7} alt="제주말차푸딩" title="제주말차푸딩"/>
                   </div>
@@ -139,8 +177,10 @@ function Main() {
                     <p>제주말차 푸딩</p>
                     <span>5.0</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding8} alt="티라미수푸딩" title="티라미수푸딩"/>
                   </div>
@@ -148,8 +188,10 @@ function Main() {
                     <p>티라미수 푸딩</p>
                     <span>4.5</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding9} alt="인절미푸딩" title="인절미푸딩"/>
                   </div>
@@ -157,8 +199,10 @@ function Main() {
                     <p>인절미 푸딩</p>
                     <span>4.5</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding10} alt="흑임자푸딩" title="흑임자푸딩"/>
                   </div>
@@ -166,8 +210,10 @@ function Main() {
                     <p>흑임자 푸딩</p>
                     <span>4.5</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding11} alt="쑥푸딩" title="쑥푸딩"/>
                   </div>
@@ -175,8 +221,10 @@ function Main() {
                     <p>쑥 푸딩</p>
                     <span>4.5</span>
                   </div>
-                </div>
-                <div className="slide">
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
                   <div className="img-box">
                     <img src={pudding12} alt="밀크티푸딩" title="밀크티푸딩"/>
                   </div>
@@ -184,7 +232,8 @@ function Main() {
                     <p>밀크티 푸딩</p>
                     <span>4.5</span>
                   </div>
-                </div>
+                  </div>
+                </Link>
               </div>
             </div>
             <div className="nextBtn"></div>
@@ -303,6 +352,14 @@ function Main() {
         </section>
       </Slide>
     </FullPage>
+
+    <div className="slide-page-btns">
+      <div className="page-btn active"></div>
+      <div className="page-btn"></div>
+      <div className="page-btn"></div>
+      <div className="page-btn"></div>
+    </div>
+    </>
   );
 }
 
