@@ -13,7 +13,7 @@ import MenuDetail from './components/pages/MenuDetail';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter className='root'>
       <Nav/>
       <ScrollToTop/>
       <Routes>

@@ -13,7 +13,7 @@ html, body{
     padding: 0;
     box-sizing: border-box;
 }
-img, svg,video{
+img, svg, video{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -25,6 +25,7 @@ a{
 button{
     border: none;
     outline: none;
+    background-color: transparent;
 }
 ul,li{
     list-style: none;
