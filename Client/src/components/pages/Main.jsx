@@ -96,135 +96,135 @@ function Main() {
               <div className="slide-wrap">
                 <Link to="/menu">
                   <div className="slide">
-                  <div className="img-box">
-                    <p className="tag">Signature</p>
-                    <img src={pudding1} alt="조선향미푸딩" title="조선향미푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>조선향미 푸딩</p>
-                    <span>4.3</span>
-                  </div>
-                  </div>
-                </Link>
-                <Link href="/menu">
-                  <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding2} alt="바나나푸딩" title="바나나푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>바나나 푸딩</p>
-                    <span>4.0</span>
-                  </div>
+                    <div className="img-box">
+                      <p className="tag">Signature</p>
+                      <img src={pudding1} alt="조선향미푸딩" title="조선향미푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>조선향미 푸딩</p>
+                      <span>4.3</span>
+                    </div>
                   </div>
                 </Link>
                 <Link to="/menu">
                   <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding3} alt="바나나카라멜푸딩" title="바나나카라멜푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>바나나카라멜 푸딩</p>
-                    <span>4.5</span>
-                  </div>
-                  </div>
-                </Link>
-                <Link to="/menu">
-                  <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding4} alt="베리치즈푸딩" title="베리치즈푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>베리치즈 푸딩</p>
-                    <span>5.3</span>
-                  </div>
+                    <div className="img-box">
+                      <img src={pudding2} alt="바나나푸딩" title="바나나푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>바나나 푸딩</p>
+                      <span>4.0</span>
+                    </div>
                   </div>
                 </Link>
                 <Link to="/menu">
                   <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding5} alt="다크초코푸딩" title="다크초코푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>다크초코 푸딩</p>
-                    <span>5.0</span>
-                  </div>
-                  </div>
-                </Link>
-                <Link to="/menu">
-                  <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding6} alt="민트초코푸딩" title="민트초코푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>민트초코 푸딩</p>
-                    <span>4.5</span>
-                  </div>
+                    <div className="img-box">
+                      <img src={pudding3} alt="바나나카라멜푸딩" title="바나나카라멜푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>바나나카라멜 푸딩</p>
+                      <span>4.5</span>
+                    </div>
                   </div>
                 </Link>
                 <Link to="/menu">
                   <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding7} alt="제주말차푸딩" title="제주말차푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>제주말차 푸딩</p>
-                    <span>5.0</span>
-                  </div>
-                  </div>
-                </Link>
-                <Link to="/menu">
-                  <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding8} alt="티라미수푸딩" title="티라미수푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>티라미수 푸딩</p>
-                    <span>4.5</span>
-                  </div>
+                    <div className="img-box">
+                      <img src={pudding4} alt="베리치즈푸딩" title="베리치즈푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>베리치즈 푸딩</p>
+                      <span>5.3</span>
+                    </div>
                   </div>
                 </Link>
                 <Link to="/menu">
                   <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding9} alt="인절미푸딩" title="인절미푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>인절미 푸딩</p>
-                    <span>4.5</span>
-                  </div>
-                  </div>
-                </Link>
-                <Link to="/menu">
-                  <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding10} alt="흑임자푸딩" title="흑임자푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>흑임자 푸딩</p>
-                    <span>4.5</span>
-                  </div>
+                    <div className="img-box">
+                      <img src={pudding5} alt="다크초코푸딩" title="다크초코푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>다크초코 푸딩</p>
+                      <span>5.0</span>
+                    </div>
                   </div>
                 </Link>
                 <Link to="/menu">
                   <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding11} alt="쑥푸딩" title="쑥푸딩"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>쑥 푸딩</p>
-                    <span>4.5</span>
-                  </div>
+                    <div className="img-box">
+                      <img src={pudding6} alt="민트초코푸딩" title="민트초코푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>민트초코 푸딩</p>
+                      <span>4.5</span>
+                    </div>
                   </div>
                 </Link>
                 <Link to="/menu">
                   <div className="slide">
-                  <div className="img-box">
-                    <img src={pudding12} alt="밀크티푸딩" title="밀크티푸딩"/>
+                    <div className="img-box">
+                      <img src={pudding7} alt="제주말차푸딩" title="제주말차푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>제주말차 푸딩</p>
+                      <span>5.0</span>
+                    </div>
                   </div>
-                  <div className="txt-box">
-                    <p>밀크티 푸딩</p>
-                    <span>4.5</span>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={pudding8} alt="티라미수푸딩" title="티라미수푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>티라미수 푸딩</p>
+                      <span>4.5</span>
+                    </div>
                   </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={pudding9} alt="인절미푸딩" title="인절미푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>인절미 푸딩</p>
+                      <span>4.5</span>
+                    </div>
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={pudding10} alt="흑임자푸딩" title="흑임자푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>흑임자 푸딩</p>
+                      <span>4.5</span>
+                    </div>
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={pudding11} alt="쑥푸딩" title="쑥푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>쑥 푸딩</p>
+                      <span>4.5</span>
+                    </div>
+                  </div>
+                </Link>
+                <Link to="/menu">
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={pudding12} alt="밀크티푸딩" title="밀크티푸딩"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>밀크티 푸딩</p>
+                      <span>4.5</span>
+                    </div>
                   </div>
                 </Link>
               </div>
