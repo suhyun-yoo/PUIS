@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+
 // css 연결
 import "../css/reset.css";
 import "../css/style.css";
@@ -172,7 +174,7 @@ function Nav() {
             <span></span>
             <span></span>
           </div>
-          <a href="/"><div className="logo"> PUIS </div></a>
+          <Link to="/"><div className="logo"> PUIS </div></Link>
           <div className="icon-box" onClick={iconBox}>
             <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
               <path
