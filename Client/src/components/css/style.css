@@ -299,7 +299,7 @@
     background-size: cover;
 }
 
-/* section2 영역 */
+/* section 영역 */
 .sec1{
     width: 100%;
     height: 100vh;
@@ -361,7 +361,6 @@
     width: 1000px;
     margin: 0 auto;
     overflow: hidden;
-
 }
 .sec1 .sec1-body .slide-wrap{
     width: 2400px;
@@ -393,15 +392,18 @@
 .sec2 .sec2-body .slide-wrap-outer:hover .slide-wrap{
     animation-play-state: paused;
 }
+
 .sec1 .sec1-body .slide-wrap .slide,
 .sec2 .sec2-body .slide-wrap .slide{
-    width: 200px;
+    width: 180px;
     height: 250px;
     margin: 10px;
     cursor: pointer;
 }
 .sec1 .sec1-body .slide-wrap .slide .img-box{
     position: relative;
+    width: 100%;
+    height: 200px;
 }
 .sec1 .sec1-body .slide-wrap .slide .img-box .tag{
     position: absolute;

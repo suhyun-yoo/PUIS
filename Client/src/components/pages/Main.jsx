@@ -246,96 +246,116 @@ function Main() {
             <div className="prevBtn"></div>
             <div className="slide-wrap-outer">
               <div className="slide-wrap">
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier1} alt="플레인휘낭시에" title="플레인휘낭시에"/>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier1} alt="플레인휘낭시에" title="플레인휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>플레인 휘낭시에</p>
+                      <span>2.0</span>
+                    </div>
                   </div>
-                  <div className="txt-box">
-                    <p>플레인 휘낭시에</p>
-                    <span>2.0</span>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier2} alt="마카다미아휘낭시에" title="마카다미아휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>마카다미아 휘낭시에</p>
+                      <span>2.3</span>
+                    </div>
                   </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier2} alt="마카다미아휘낭시에" title="마카다미아휘낭시에"/>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier3} alt="스카치헤이즐넛휘낭시에" title="스카치헤이즐넛휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>스카치 헤이즐넛 휘낭시에</p>
+                      <span>2.3</span>
+                    </div>
                   </div>
-                  <div className="txt-box">
-                    <p>마카다미아 휘낭시에</p>
-                    <span>2.3</span>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier4} alt="아몬드카라멜휘낭시에" title="아몬드카라멜휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>아몬드 카라멜 휘낭시에</p>
+                      <span>2.3</span>
+                    </div>
                   </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier3} alt="스카치헤이즐넛휘낭시에" title="스카치헤이즐넛휘낭시에"/>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier5} alt="레몬홍차휘낭시에" title="레몬홍차휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>레몬홍차 휘낭시에</p>
+                      <span>2.3</span>
+                    </div>
                   </div>
-                  <div className="txt-box">
-                    <p>스카치 헤이즐넛 휘낭시에</p>
-                    <span>2.3</span>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier6} alt="소금초코휘낭시에" title="소금초코휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>소금초코 휘낭시에</p>
+                      <span>2.6</span>
+                    </div>
                   </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier4} alt="아몬드카라멜휘낭시에" title="아몬드카라멜휘낭시에"/>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier7} alt="코코넛휘낭시에" title="코코넛휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>코코넛 휘낭시에</p>
+                      <span>2.6</span>
+                    </div>
                   </div>
-                  <div className="txt-box">
-                    <p>아몬드 카라멜 휘낭시에</p>
-                    <span>2.3</span>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier8} alt="흑임자휘낭시에" title="흑임자휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>흑임자 휘낭시에</p>
+                      <span>2.6</span>
+                    </div>
                   </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier5} alt="레몬홍차휘낭시에" title="레몬홍차휘낭시에"/>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier9} alt="바질치즈휘낭시에" title="바질치즈휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>바질치즈 휘낭시에</p>
+                      <span>2.6</span>
+                    </div>
                   </div>
-                  <div className="txt-box">
-                    <p>레몬홍차 휘낭시에</p>
-                    <span>2.3</span>
+                </Link>
+                <Link to='/menu'>
+                  <div className="slide">
+                    <div className="img-box">
+                      <img src={financier10} alt="애플크럼블휘낭시에" title="애플크럼블휘낭시에"/>
+                    </div>
+                    <div className="txt-box">
+                      <p>애플크럼블 휘낭시에</p>
+                      <span>2.6</span>
+                    </div>
                   </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier6} alt="소금초코휘낭시에" title="소금초코휘낭시에"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>소금초코 휘낭시에</p>
-                    <span>2.6</span>
-                  </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier7} alt="코코넛휘낭시에" title="코코넛휘낭시에"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>코코넛 휘낭시에</p>
-                    <span>2.6</span>
-                  </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier8} alt="흑임자휘낭시에" title="흑임자휘낭시에"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>흑임자 휘낭시에</p>
-                    <span>2.6</span>
-                  </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier9} alt="바질치즈휘낭시에" title="바질치즈휘낭시에"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>바질치즈 휘낭시에</p>
-                    <span>2.6</span>
-                  </div>
-                </div>
-                <div className="slide">
-                  <div className="img-box">
-                    <img src={financier10} alt="애플크럼블휘낭시에" title="애플크럼블휘낭시에"/>
-                  </div>
-                  <div className="txt-box">
-                    <p>애플크럼블 휘낭시에</p>
-                    <span>2.6</span>
-                  </div>
-                </div>
+                </Link>
               </div>
             </div>
             <div className="nextBtn"></div>
