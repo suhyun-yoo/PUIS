@@ -831,13 +831,13 @@ hr{
 /* menuDetail-body */
 .menuDetail .menuDetail-body{
     width: 100%;
-    height: 450vh;
+    height: 400vh;
     margin: 50px;
 }
 .menuDetail .menuDetail-body .img-box{
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background: url('../img/menuDetail3.png') center no-repeat;
+    background: url('../img/menuDetail.png') center no-repeat;
     background-size: contain;
 }
