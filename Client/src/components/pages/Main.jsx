@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
-// 풀페이지 연결
-import { FullPage, Slide } from "react-full-page";
 // css 연결
 import "../css/reset.css";
 import "../css/style.css";
@@ -68,9 +65,7 @@ function Main() {
     });
   return (
     <>
-    <FullPage controls>
       {/* banner 영역 */}
-      <Slide>
         <div className="banner">
           <div className="banner-box-left"></div>
           <div className="banner-box-right">
@@ -85,10 +80,8 @@ function Main() {
             <div className="img-box"></div>
           </div>
         </div>
-      </Slide>
 
       {/* section1 영역 */}
-      <Slide>
         <section className="sec1">
           <div className="sec1-head">
             <div className="txt-box">
@@ -239,10 +232,8 @@ function Main() {
             <div className="nextBtn"></div>
           </div>
         </section>
-      </Slide>
 
       {/* section2 영역 */}
-      <Slide>
         <section className="sec1 sec2">
           <div className="sec1-head sec2-head">
             <div className="txt-box">
@@ -350,8 +341,6 @@ function Main() {
             <div className="nextBtn"></div>
           </div>
         </section>
-      </Slide>
-    </FullPage>
 
     <div className="slide-page-btns">
       <div className="page-btn active"></div>
