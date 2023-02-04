@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // css 연결
 import "../css/reset.css";
 import "../css/style.css";
@@ -16,15 +17,15 @@ function Footer() {
             <div className="footer-left-top"><span>PUIS</span> DESSERT</div>
             <div className="footer-left-middle">TEL : 010-4111-2238</div>
             <div className="footer-left-bottom">
-              <a className="footer-icon" href="https://www.instagram.com/__puis/" target="_blank" rel="noreferrer">
+              <Link className="footer-icon" to="https://www.instagram.com/__puis/" target="_blank" rel="noreferrer">
                 <img src={instagram} alt="instagram icon" />
-              </a>
-              <a className="footer-icon" href="https://smartstore.naver.com/__puis" target="_blank" rel="noreferrer">
+              </Link>
+              <Link className="footer-icon" to="https://smartstore.naver.com/__puis" target="_blank" rel="noreferrer">
                 <p>N</p>
-              </a>
-              <a className="footer-icon" href="https://open.kakao.com/" target="_blank" rel="noreferrer">
+              </Link>
+              <Link className="footer-icon" to="https://open.kakao.com/" target="_blank" rel="noreferrer">
                 <img src={kakaoTalk} alt="kakao-talk icon"/>
-              </a>
+              </Link>
             </div>
         </div>
         <div className="footer-right">
