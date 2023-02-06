@@ -10,10 +10,10 @@ Use PUIS;
  CREATE TABLE IF NOT EXISTS User(
 	uid char(20) NOT NULL PRIMARY KEY,
 	pw VARCHAR(255)	NOT NULL,
-	email varchar(10) NOT NULL,
+	email varchar(30) NOT NULL,
 	address varchar(50)	NULL,
 	phone int(11) NULL,
-	reg_date datetime NOT NULL
+	reg_date datetime NOT NULL default CURRENT_TIMESTAMP #DATETIME 지정 시, 기본 DEFAULT값을 지정해주어야 함
 );
 select * from User;
 
@@ -35,28 +35,43 @@ CREATE TABLE IF NOT EXISTS Menu(
 	price int(11) NOT NULL,
 	category char(20) NOT NULL,
 	item_stock int(10) NOT NULL DEFAULT 0,
-	reg_date datetime NULL
+	reg_date datetime NOT NULL default CURRENT_TIMESTAMP
 );
-SELECT * FROM MENU;
 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('조선향미푸딩', 4.3, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나푸딩', 4.0, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나카라멜푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('다크초코푸딩', 5.0, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('밀크티푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('티라미수푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('민트초코푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('인절미푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('쑥푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('제주말차푸딩', 5.0, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('베리치즈푸딩', 5.3, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('딸기푸딩', 4.3, '푸딩'); 
+# 3-1. 푸딩 메뉴 추가
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('조선향미 푸딩', 4.3, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나 푸딩', 4.0, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나 카라멜 푸딩', 4.5, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('다크초코 푸딩', 5.0, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('밀크티 푸딩', 4.5, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('티라미수 푸딩', 4.5, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('민트초코 푸딩', 4.5, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('인절미 푸딩', 4.5, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('쑥 푸딩', 4.5, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 푸딩', 4.5, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('제주말차 푸딩', 5.0, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('베리치즈 푸딩', 5.3, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('딸기 푸딩', 4.3, '푸딩'); 
+
+# 3-2. 휘낭시에 메뉴 추가
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('플레인 휘낭시에', 2.0, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('마카다미아 휘낭시에', 2.3, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('아몬드 카라멜 휘낭시에', 2.3, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('스카치 헤이즐넛 휘낭시에', 2.3, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('레몬 휘낭시에', 2.3, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('소금초코 휘낭시에', 2.6, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('코코넛 휘낭시에', 2.6, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('애플 크럼블 휘낭시에', 2.6, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 휘낭시에', 2.6, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바질치즈 휘낭시에', 2.6, '휘낭시에'); 
+
+
+SELECT * FROM MENU;
 
 # 4. 메뉴상세 menu_detail 테이블
 CREATE TABLE IF NOT EXISTS menu_detail(
 	menu_img_num int(10) NOT NULL PRIMARY KEY,
-	item_num int(10) NOT NULL, # 상품번호인데 AUTO_INCREMENT가 필요한 이유를 모르겠음
+	item_num int(10) NOT NULL,
 	item_img1 varchar(100) NOT NULL,
 	item_img2 varchar(100) NULL,
 	item_img3 varchar(100) NULL,
@@ -73,7 +88,7 @@ CREATE TABLE IF NOT EXISTS item_review(
 	item_num int(10) NOT NULL, #제품번호 AUTO_INCREMENT 사용 이유가 무엇인가 자네.
 	contents varchar(255) NOT NULL, #리뷰내용 NULL값 허용 막자
 	WRITER varchar(20) NOT NULL, #작성자도 굳이 NULL로 할 이유가 없는 것 같슈
-	reg_date datetime NOT NULL,
+	reg_date datetime NOT NULL default CURRENT_TIMESTAMP,
     FOREIGN KEY(ITEM_NUM) REFERENCES MENU(ITEM_NUM),
     FOREIGN KEY(WRITER) REFERENCES USER(UID)
 );
