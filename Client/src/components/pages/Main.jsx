@@ -70,7 +70,7 @@ function Main() {
             </div>
           </div>
           <div className="sec1-body">
-            <div className="prevBtn"></div>
+            {/* <div className="prevBtn"></div> */}
             <div className="slide-wrap-outer">
               <div className="slide-wrap">
                 <Link to="/menu">
@@ -208,7 +208,7 @@ function Main() {
                 </Link>
               </div>
             </div>
-            <div className="nextBtn"></div>
+            {/* <div className="nextBtn"></div> */}
           </div>
         </section>
 
@@ -222,7 +222,7 @@ function Main() {
             </div>
           </div>
           <div className="sec2-body">
-            <div className="prevBtn"></div>
+            {/* <div className="prevBtn"></div> */}
             <div className="slide-wrap-outer">
               <div className="slide-wrap">
                 <Link to='/menu'>
@@ -337,7 +337,7 @@ function Main() {
                 </Link>
               </div>
             </div>
-            <div className="nextBtn"></div>
+            {/* <div className="nextBtn"></div> */}
           </div>
         </section>
     </>
