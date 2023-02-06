@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from 'react-router-dom';
 // css 연결
 import "../css/reset.css";
 import "../css/style.css";
+import axios from "axios";
 
 // section1 영역 img 
 import pudding1 from '../img/조선향미푸딩.jpg';
@@ -34,35 +35,13 @@ import financier10 from '../img/애플크럼블휘낭시에.jpg';
 import $ from "jquery";
 
 function Main() {
-    // window 화면의 위치값에 따라 slide-page-btn 영역 활성화 및 제거
-    const wh = $(window).height();
-    $(window).on('scroll', function(){
-      let sct = $(window).scrollTop();
-      // console.log('sct : ', sct);
-      // console.log('height : ', wh);
+  useEffect(() => {
+    axios.get('/main',{withCredentials: true})
+      .then(res =>
+          console.log(res.data.result)
+        )
+  }, []);
   
-      if(sct < wh){
-        $('.slide-page-btns .page-btn:nth-child(1)').addClass('active');
-        $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
-      } else if(sct === wh){
-        $('.slide-page-btns .page-btn:nth-child(2)').addClass('active');
-        $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
-      } else if(sct === wh*2){
-        $('.slide-page-btns .page-btn:nth-child(3)').addClass('active');
-        $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(4)').removeClass('active');
-      } else if(sct > wh*3){
-        $('.slide-page-btns .page-btn:nth-child(4)').addClass('active');
-        $('.slide-page-btns .page-btn:nth-child(1)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(2)').removeClass('active');
-        $('.slide-page-btns .page-btn:nth-child(3)').removeClass('active');
-      }
-    });
   return (
     <>
       {/* banner 영역 */}
@@ -361,13 +340,6 @@ function Main() {
             <div className="nextBtn"></div>
           </div>
         </section>
-
-    <div className="slide-page-btns">
-      <div className="page-btn active"></div>
-      <div className="page-btn"></div>
-      <div className="page-btn"></div>
-      <div className="page-btn"></div>
-    </div>
     </>
   );
 }
