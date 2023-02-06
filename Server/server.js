@@ -99,9 +99,18 @@ app.post("/signup", (req, res) => {
   res.send({ regist: "success" });
 });
 
+// ========== 메인페이지 연결하기 ==========
+app.get('/main', (req, res) => {
+  // 소수점 자리수가 0인 가격표도 소수점 아래 자리까지 보여질 수 있도록 FORMAT 사용
+  db.query('select item, FORMAT(price,1) from menu', (error, rows, fields) => {
+    console.log(rows);
+    res.send({result : rows});
+  })
+});
+
 // ========== 5000번 포트 연결 확인하기 ==========
 // http://localhost:5000/ 에서 응답 확인 가능
-app.get("/", (req, res) => {
+app.get("/main", (req, res) => {
   res.send(`연결 성공 : localhost : ${port}`);
 });
 

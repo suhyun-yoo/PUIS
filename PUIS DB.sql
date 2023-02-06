@@ -32,7 +32,7 @@ SELECT * FROM ADDR_DETAIL;
 CREATE TABLE IF NOT EXISTS Menu(
 	item_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	item varchar(20) NOT NULL,
-	price int(11) NOT NULL,
+	price float(11) NOT NULL,
 	category char(20) NOT NULL,
 	item_stock int(10) NOT NULL DEFAULT 0,
 	reg_date datetime NOT NULL default CURRENT_TIMESTAMP
@@ -65,12 +65,11 @@ INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('애플 크럼블 휘낭시에', 2
 INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 휘낭시에', 2.6, '휘낭시에'); 
 INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바질치즈 휘낭시에', 2.6, '휘낭시에'); 
 
-
 SELECT * FROM MENU;
 
 # 4. 메뉴상세 menu_detail 테이블
 CREATE TABLE IF NOT EXISTS menu_detail(
-	menu_img_num int(10) NOT NULL PRIMARY KEY,
+	menu_img_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	item_num int(10) NOT NULL,
 	item_img1 varchar(100) NOT NULL,
 	item_img2 varchar(100) NULL,
@@ -78,8 +77,34 @@ CREATE TABLE IF NOT EXISTS menu_detail(
 	item_img4 varchar(100) NULL,
 	item_img5 varchar(100) NULL,
 	item_desc varchar(100) NOT NULL,
-    FOREIGN KEY(ITEM_NUM) REFERENCES MENU(ITEM_NUM)
+    FOREIGN KEY(ITEM_NUM) REFERENCES MENU(ITEM_NUM) ON UPDATE CASCADE ON DELETE CASCADE #부모 테이블에서 삭제되거나 수정되면 함께 삭제 및 수정되도록 하기
 );
+
+# 4-1. menu_detail 데이터 추가
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(1, '../img/조선향미푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(2, '../img/바나나푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(3, '../img/바나나카라멜푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(4, '../img/다크초코푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(5, '../img/밀크티푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(6, '../img/티라미수푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(7, '../img/민트초코푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(8, '../img/인절미푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(9, '../img/쑥푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(10, '../img/흑임자푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(11, '../img/제주말차푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(12, '../img/베리치즈푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(13, '../img/딸기푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(14, '../img/플레인휘낭시에.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(15, '../img/마카다미아휘낭시에.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(16, '../img/아몬드카라멜휘낭시에.jpg','../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(17, '../img/스카치헤이즐넛휘낭시에.jpg','../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(18, '../img/레몬휘낭시에.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(19, '../img/소금초코휘낭시에.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(20, '../img/코코넛휘낭시에.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(21, '../img/애플크럼블휘낭시에.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(22, '../img/흑임자휘낭시에.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(23, '../img/바질치즈휘낭시에.jpg', '../img/menuDetail.png');
+
 SELECT * FROM MENU_DETAIL;
 
 # 5. 제품리뷰 item_review 테이블
