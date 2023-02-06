@@ -41,6 +41,7 @@ function Nav() {
   // 3-2. submenu > review 버튼 클릭 시, review 페이지 이동하기
   const navigate = useNavigate();
   const review = () => {
+    $(".wrap header .hamburger").removeClass("active");
     $('.wrap .submenu').removeClass('active');
     navigate('/review/read');
   }
