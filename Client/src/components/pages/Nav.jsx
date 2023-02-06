@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // css 연결
 import "../css/reset.css";
@@ -26,7 +26,8 @@ function Nav() {
     $(".wrap header .hamburger").toggleClass("active");
     $(".wrap .submenu").toggleClass("active");
   };
-  // 3. submenu > menu 버튼 클릭 시, menu slide 영역으로 화면 이동하기
+
+  // 3-1. submenu > menu 버튼 클릭 시, menu slide 영역으로 화면 이동하기
   const click_menuSub = () => {
     $(".wrap header .hamburger").removeClass("active");
     $(".wrap .submenu").removeClass("active");
@@ -37,6 +38,13 @@ function Nav() {
       1000
     );
   };
+  // 3-2. submenu > review 버튼 클릭 시, review 페이지 이동하기
+  const navigate = useNavigate();
+  const review = () => {
+    $('.wrap .submenu').removeClass('active');
+    navigate('/review/read');
+  }
+
   // 4. icon-box 영역 클릭 시, 로그인 및 회원가입 팝업창 띄우기
   const iconBox = () => {
     $(".wrap .loginBox").addClass("active");
@@ -204,7 +212,7 @@ function Nav() {
       {/* submenu 영역 */}
       <ul className="submenu">
         <li onClick={click_menuSub}>MENU</li>
-        <li>REVIEW</li>
+        <li onClick={review}>REVIEW</li>
         <li>ORDER</li>
       </ul>
 
