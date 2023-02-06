@@ -138,7 +138,8 @@ function Nav() {
         Address: Address,
         Phone: Phone,
       };
-      axios.post(url, body).then((res) => {
+      axios.post(url, body)
+      .then((res) => {
         console.log(res.data.result);
         // 회원가입 입력창 초기화
         setID("");
@@ -148,12 +149,18 @@ function Nav() {
         setAddress();
         setPhone();
 
-        // 회원가입 완료 알림창 띄우기
-        alert("회원가입 완료! 로그인하기");
+        if(res === 'success'){
+          // 회원가입 완료 알림창 띄우기
+          alert("회원가입 완료! 로그인하기");
 
-        // 로그인 팝업 띄우기
-        $(".wrap .signupBox").removeClass("active");
-        $(".wrap .loginBox").addClass("active");
+          // 로그인 팝업 띄우기
+          $(".wrap .signupBox").removeClass("active");
+          $(".wrap .loginBox").addClass("active");
+        } else {
+          alert('실패')
+        }
+
+
       });
     }
   };
