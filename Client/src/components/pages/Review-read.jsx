@@ -8,7 +8,9 @@ import $ from "jquery";
 
 function ReviewRead() {
   return (
-    <h1>hello</h1>
+    <div className="review">
+      <h1>review</h1>
+    </div>
   );
 }
 
