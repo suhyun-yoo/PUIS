@@ -10,6 +10,7 @@ import Main from './components/pages/Main';
 import Footer from './components/pages/Footer';
 import SideBar from './components/pages/Side-bar';
 import MenuDetail from './components/pages/MenuDetail';
+import ReviewRead from './components/pages/Review-read';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>} />
         <Route path='/menu' element={<MenuDetail/>} />
+        <Route path='/review/read' element={<ReviewRead/>} />
+        {/* <Route path='/review/read/:no' element={<ReviewRead/>} /> */}
       </Routes>
       <SideBar/>
       <Footer/>
