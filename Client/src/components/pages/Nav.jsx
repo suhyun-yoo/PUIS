@@ -81,9 +81,12 @@ function Nav() {
         $(".wrap .loginBox").removeClass("active");
         alert('로그인 성공');
       } else {
-        alert('확인 후 다시 로그인해주세요');
+        alert('존재하지 않는 회원입니다. 회원가입 후 이용해주세요.');
         setID("");
         setPW("");
+        // 회원가입 팝업 띄우기
+        $(".wrap .signupBox").addClass("active");
+        $(".wrap .loginBox").removeClass("active");
       }
     });
   };

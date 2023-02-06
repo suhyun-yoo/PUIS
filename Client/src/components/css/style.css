@@ -141,8 +141,8 @@
 }
 .wrap .loginBox.active .login-txt,
 .wrap .signupBox.active .signup-txt{
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 430px;
     background-color: white;
     position: fixed;
     top: 50%;
@@ -153,9 +153,7 @@
     align-items: center;
     flex-direction: column;
 }
-.wrap .signupBox.active .signup-txt{
-    height: 80vh;
-}
+
 /* 닫기 버튼 */
 .wrap .loginBox.active .login-txt .closeBtn,
 .wrap .signupBox.active .signup-txt .closeBtn{
@@ -854,3 +852,5 @@ hr{
     background: url('../img/menuDetail.png') center no-repeat;
     background-size: contain;
 }
+
+/* ========== review-read ========== */
