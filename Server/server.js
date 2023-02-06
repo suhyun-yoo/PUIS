@@ -57,27 +57,21 @@ app.post("/login", (req, res) => {
 
   // 3. sql 쿼리문을 사용하여 user 정보 전체 가져오기
   db.query(
-    "SELECT id,password FROM User WHERE uid = ? AND PW = ? ",
+    "SELECT uid,pw FROM User WHERE uid = ? AND PW = ? ",
     [id, pw],
     (err, data) => {
       if (!err) {
-        const userData = data;
-        console.log(userData);
-
         // for문을 통해, 해당 인덱스의 ID와 PW가 요청이 들어온 ID와 PW가 일치한다면 success 반환
-        // for (let i = 0; i < userData.length; i++) {
-        //   if (userData[i].id === id && userData[i].password === pw) {
-        //     // res.send({ 'login' : 'success'});
-        //     result = "success";
-        //   } else {
-        //     result = "fail";
-        //   }
-        // }
-        if (userData.length > 0) {
-          res.send({ result: "success" });
-        } else {
-          res.send({ result: "fail" });
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].uid === id && data[i].pw === pw) {
+            // res.send({ 'login' : 'success'});
+            console.log('success')
+            result = "success";
+          } else {
+            result = "fail";
+          }
         }
+        res.send({result : result})
       }
     }
   );
