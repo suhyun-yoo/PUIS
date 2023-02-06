@@ -8,7 +8,7 @@ Use PUIS;
 
 # 1. 유저정보 User 테이블
  CREATE TABLE IF NOT EXISTS User(
-	uid char(20) NOT NULL,
+	uid char(20) NOT NULL PRIMARY KEY,
 	pw VARCHAR(255)	NOT NULL,
 	email varchar(10) NOT NULL,
 	address varchar(50)	NULL,
@@ -17,18 +17,20 @@ Use PUIS;
 );
 select * from User;
 
-# 2. 마이페이지 Mypage 테이블
-CREATE TABLE IF NOT EXISTS Mypage(
-	idx int(10)	NOT NULL,
+# 2. 주소상세 addr_detail 테이블
+CREATE TABLE IF NOT EXISTS addr_detail(
+	addr_detail_num int(10)	NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	uid char(20) NOT NULL,
-	order_num int(10) NULL,
-	review_num int(10)	NULL
+	user_addr1 int(11) NOT NULL,
+	user_addr2 varchar(50) NOT NULL,
+	user_addr3 varchar(20) NOT NULL,
+    FOREIGN KEY(UID) REFERENCES USER(UID)
 );
-SELECT * FROM MYPAGE;
+SELECT * FROM ADDR_DETAIL;
 
 # 3. 메뉴 Menu 테이블
 CREATE TABLE IF NOT EXISTS Menu(
-	item_num int(10) NOT NULL,
+	item_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	item varchar(20) NOT NULL,
 	price int(11) NOT NULL,
 	category char(20) NOT NULL,
@@ -37,110 +39,81 @@ CREATE TABLE IF NOT EXISTS Menu(
 );
 SELECT * FROM MENU;
 
-# 4. 주문 Order_item 테이블
+# 4. 메뉴상세 menu_detail 테이블
+CREATE TABLE IF NOT EXISTS menu_detail(
+	menu_img_num int(10) NOT NULL PRIMARY KEY,
+	item_num int(10) NOT NULL, # 상품번호인데 AUTO_INCREMENT가 필요한 이유를 모르겠음
+	item_img1 varchar(100) NOT NULL,
+	item_img2 varchar(100) NULL,
+	item_img3 varchar(100) NULL,
+	item_img4 varchar(100) NULL,
+	item_img5 varchar(100) NULL,
+	item_desc varchar(100) NOT NULL,
+    FOREIGN KEY(ITEM_NUM) REFERENCES MENU(ITEM_NUM)
+);
+SELECT * FROM MENU_DETAIL;
+
+# 5. 제품리뷰 item_review 테이블
+CREATE TABLE IF NOT EXISTS item_review(
+	review_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	item_num int(10) NOT NULL, #제품번호 AUTO_INCREMENT 사용 이유가 무엇인가 자네.
+	contents varchar(255) NOT NULL, #리뷰내용 NULL값 허용 막자
+	WRITER varchar(20) NOT NULL, #작성자도 굳이 NULL로 할 이유가 없는 것 같슈
+	reg_date datetime NOT NULL,
+    FOREIGN KEY(ITEM_NUM) REFERENCES MENU(ITEM_NUM),
+    FOREIGN KEY(WRITER) REFERENCES USER(UID)
+);
+SELECT * FROM ITEM_REVIEW;
+
+# 6. 장바구니 Cart 테이블
+CREATE TABLE Cart (
+	cart_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT, #PK는 NULL값으로 지정할 수 없음
+	item_num int(10) NOT NULL,
+	count int(10) NULL DEFAULT 0,
+	item varchar(20) NOT NULL,
+	uid char(20) NOT NULL,
+    FOREIGN KEY(ITEM_NUM) REFERENCES MENU(ITEM_NUM),
+    FOREIGN KEY(UID) REFERENCES USER(UID) #MYPAGE에서 UID를 가져와야 하는 이유가 뭐얌?
+);
+SELECT * FROM CART;
+
+# 7. 주문 Order_item 테이블
 CREATE TABLE IF NOT EXISTS Order_item(
-	order_num int(10) NULL,
-	cart_num int(10) NULL,
+	order_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+	cart_num int(10) NOT NULL,
 	item_num int(10) NOT NULL,
 	receiver_name varchar(20) NOT NULL,
 	receiver_phone varchar(20) NOT NULL,
 	addr1 int(10) NOT NULL, #우편번호
 	addr2 varchar(50) NOT NULL, #주소
 	addr3 varchar(20) NULL, #상세주소
-	order_date datetime	NOT NULL
+	order_date datetime	NOT NULL,
+    FOREIGN KEY(CART_NUM) REFERENCES CART(CART_NUM),
+    FOREIGN KEY(ITEM_NUM) REFERENCES CART(ITEM_NUM) #CART에서 가져올지 MENU에서 가져올지
 );
 SELECT * FROM ORDER_ITEM;
 
-# 5. 장바구니 Cart 테이블
-CREATE TABLE Cart (
-	cart_num int(10) NULL,
-	item_num int(10) NOT NULL,
-	count int(10) NULL DEFAULT 0,
-	item varchar(20) NOT NULL,
-	uid char(20) NOT NULL
-);
-SELECT * FROM CART;
-
-# 6. 메뉴상세 menu_detail 테이블
-CREATE TABLE IF NOT EXISTS menu_detail(
-	menu_img_num int(10) NULL,
-	item_num int(10) NOT NULL,
-	item_img1 varchar(100) NOT NULL,
-	item_img2 varchar(100) NULL,
-	item_img3 varchar(100) NULL,
-	item_img4 varchar(100) NULL,
-	item_img5 varchar(100) NULL,
-	item_desc varchar(100) NOT NULL
-);
-SELECT * FROM MENU_DETAIL;
-
-# 7. 주문상세 Order_detail 테이블
+# 8. 주문상세 Order_detail 테이블
 CREATE TABLE IF NOT EXISTS Order_detail(
-	order_detail_num int(10) NULL,
+	order_detail_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT, #주문상세번호를 유일하게 INDEX 번호를 주기 위해 AUTO_INCREMENT 사용하면 안되남
 	item_num int(10) NOT NULL,
-	order_num int(10) NULL,
+	order_num int(10) NOT NULL,
 	count int(10) NOT NULL,
-	price int(11) NOT NULL
+	price int(11) NOT NULL,
+    FOREIGN KEY(ITEM_NUM) REFERENCES ORDER_ITEM(ITEM_NUM),
+    FOREIGN KEY(ORDER_NUM) REFERENCES ORDER_ITEM(ORDER_NUM)
 );
 SELECT * FROM ORDER_DETAIL;
 
-# 8. 주소상세 addr_detail 테이블
-CREATE TABLE IF NOT EXISTS addr_detail(
-	addr_detail_num int(10)	NULL,
+# 9. 마이페이지 Mypage 테이블
+CREATE TABLE IF NOT EXISTS Mypage(
+	idx int(10)	NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	uid char(20) NOT NULL,
-	user_addr1 int(11) NOT NULL,
-	user_addr2 varchar(50) NOT NULL,
-	user_addr3 varchar(20) NOT NULL
+	order_num int(10) NULL, #AUTO_INCREMENT
+	review_num int(10)	NULL, #AUTO_INCREMENT 
+    FOREIGN KEY(UID) REFERENCES USER(UID),
+    FOREIGN KEY(ORDER_NUM) REFERENCES ORDER_ITEM(ORDER_NUM),
+    FOREIGN KEY(REVIEW_NUM) REFERENCES ITEM_REVIEW(REVIEW_NUM)
 );
-SELECT * FROM ADDR_DETAIL;
+SELECT * FROM MYPAGE;
 
-# 9. 제품리뷰 item_review 테이블
-CREATE TABLE IF NOT EXISTS item_review(
-	review_num int(10) NULL,
-	item_num int(10) NOT NULL,
-	contents varchar(255) NULL,
-	writer varchar(20) NULL,
-	reg_date datetime NOT NULL
-);
-SELECT * FROM ITEM_REVIEW;
-
-# 참조키 
-ALTER TABLE `User` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
-	`uid`
-);
-ALTER TABLE `Mypage` ADD CONSTRAINT `PK_MYPAGE` PRIMARY KEY (
-	`idx`,
-	`uid`
-);
-ALTER TABLE `Menu` ADD CONSTRAINT `PK_MENU` PRIMARY KEY (
-	`item_num`
-);
-ALTER TABLE `Order_ITEM` ADD CONSTRAINT `PK_ORDER` PRIMARY KEY (
-	`order_num`
-);
-ALTER TABLE `Cart` ADD CONSTRAINT `PK_CART` PRIMARY KEY (
-	`cart_num`,
-	`item_num`
-);
-ALTER TABLE `menu_detail` ADD CONSTRAINT `PK_MENU_DETAIL` PRIMARY KEY (
-	`menu_img_num`
-);
-ALTER TABLE `Order_detail` ADD CONSTRAINT `PK_ORDER_DETAIL` PRIMARY KEY (
-	`order_detail_num`
-);
-ALTER TABLE `addr_detail` ADD CONSTRAINT `PK_ADDR_DETAIL` PRIMARY KEY (
-	`addr_detail_num`
-);
-ALTER TABLE `item_review` ADD CONSTRAINT `PK_ITEM_REVIEW` PRIMARY KEY (
-	`review_num`
-);
-ALTER TABLE `Mypage` ADD CONSTRAINT `FK_User_TO_Mypage_1` FOREIGN KEY (
-	`uid`
-) REFERENCES `User` (
-	`uid`
-);
-ALTER TABLE `Cart` ADD CONSTRAINT `FK_Menu_TO_Cart_1` FOREIGN KEY (
-	`item_num`
-) REFERENCES `Menu` (
-	`item_num`
-);
