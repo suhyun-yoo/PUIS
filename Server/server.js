@@ -17,14 +17,14 @@ var db = mysql.createConnection({
   user: "root",
   // password: "9616",
   password : "suhyun614!",
-  database: "puis",
+  database: "PUIS",
   // mysql 다중 쿼리 작성을 위해 추가
   multipleStatements: true,
 });
 
 db.connect();
 
-db.query("SELECT * from Users", (error, rows, fields) => {
+db.query("SELECT * from User", (error, rows, fields) => {
   //   if (error) return error;
   if (error) {
     res.send({ result: error });
@@ -57,7 +57,7 @@ app.post("/login", (req, res) => {
 
   // 3. sql 쿼리문을 사용하여 user 정보 전체 가져오기
   db.query(
-    "SELECT id,password FROM Users WHERE id = ? AND password = ? ",
+    "SELECT id,password FROM User WHERE uid = ? AND PW = ? ",
     [id, pw],
     (err, data) => {
       if (!err) {
@@ -93,7 +93,7 @@ app.post("/signup", (req, res) => {
 
   // 2. sql 쿼리문을 사용하여 table의 각 컬럼에 추가할 값 넣기
   db.query(
-    "INSERT INTO puis.Users(`id`, `password`, `email`,`address`,`phone`) VALUES (?,?,?,?,?)",
+    "INSERT INTO puis.User(`uid`, `pw`, `email`,`address`,`phone`) VALUES (?,?,?,?,?)",
     [id, pw, Email, address, phone],
     (err) => {
       if (err) {
