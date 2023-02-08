@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import { Link } from 'react-router-dom';
 // css 연결
 import "../css/reset.css";
-// import "../css/style.css";
 import styles from '../css/Main.module.css';
 import axios from "axios";
 
