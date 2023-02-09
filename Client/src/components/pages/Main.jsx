@@ -37,16 +37,17 @@ import financier10 from '../img/애플크럼블휘낭시에.jpg';
 function Main() {
   // 더미 데이터 가져오기
   const [item, setItem] = useState();
-  const [img, setImg] = useState();
+  // const [pudding, setPudding] = useState();
 
   useEffect(() => {
     axios.get('/main',{withCredentials: true})
       .then((res) => 
         setItem(res.data.result),
+        // setPudding(item.map(item => (item.item_img1)))
         )
   }, []);
   
-  console.log(item);
+  // console.log(item);
 
   return (
     <>
@@ -235,7 +236,7 @@ function Main() {
                       <div className={styles.slide}>
                         <div className={styles.imgBox}>
                           {/* <p className={styles.tag}>Signature</p> */}
-                          <img src={require(item.item_img1).default} alt={item.item} title={item.item}/>
+                          <img src={pudding1} alt={item.item} title={item.item}/>
                         </div>
                         <div className={styles.txtBox}>
                           <p>{item.item}</p>
