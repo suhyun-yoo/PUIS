@@ -32,38 +32,39 @@ SELECT * FROM ADDR_DETAIL;
 CREATE TABLE IF NOT EXISTS Menu(
 	item_num int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	item varchar(20) NOT NULL,
-	price float(11) NOT NULL,
+	#price float(11) NOT NULL,
+    price varchar(10) NOT NULL,
 	category char(20) NOT NULL,
 	item_stock int(10) NOT NULL DEFAULT 0,
 	reg_date datetime NOT NULL default CURRENT_TIMESTAMP
 );
 
 # 3-1. 푸딩 메뉴 추가
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('조선향미 푸딩', 4.3, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나 푸딩', 4.0, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나 카라멜 푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('다크초코 푸딩', 5.0, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('밀크티 푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('티라미수 푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('민트초코 푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('인절미 푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('쑥 푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 푸딩', 4.5, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('제주말차 푸딩', 5.0, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('베리치즈 푸딩', 5.3, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('딸기 푸딩', 5.8, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('조선향미 푸딩', '4.3', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나 푸딩', '4.0', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바나나 카라멜 푸딩', '4.5', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('다크초코 푸딩', '5.0', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('밀크티 푸딩', '4.5', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('티라미수 푸딩', '4.5', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('민트초코 푸딩', '4.5', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('인절미 푸딩', '4.5', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('쑥 푸딩', '4.5', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 푸딩', '4.5', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('제주말차 푸딩', '5.0', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('베리치즈 푸딩', '5.3', '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('딸기 푸딩', '5.8', '푸딩'); 
 
 # 3-2. 휘낭시에 메뉴 추가
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('플레인 휘낭시에', 2.0, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('마카다미아 휘낭시에', 2.3, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('아몬드 카라멜 휘낭시에', 2.3, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('스카치 헤이즐넛 휘낭시에', 2.3, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('레몬 휘낭시에', 2.3, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('소금초코 휘낭시에', 2.6, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('코코넛 휘낭시에', 2.6, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('애플 크럼블 휘낭시에', 2.6, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 휘낭시에', 2.6, '휘낭시에'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바질치즈 휘낭시에', 2.6, '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('플레인 휘낭시에', '2.0', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('마카다미아 휘낭시에', '2.3', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('아몬드 카라멜 휘낭시에', '2.3', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('스카치 헤이즐넛 휘낭시에', '2.3', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('레몬 휘낭시에', '2.3', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('소금초코 휘낭시에', '2.6', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('코코넛 휘낭시에', '2.6', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('애플 크럼블 휘낭시에', '2.6', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 휘낭시에', '2.6', '휘낭시에'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('바질치즈 휘낭시에', '2.6', '휘낭시에'); 
 
 SELECT * FROM MENU;
 SELECT ITEM, FORMAT(PRICE,1) FROM MENU;
@@ -108,8 +109,11 @@ INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(23, '../img/바질
 
 SELECT * FROM MENU_DETAIL;
 
-
+# 4-2. 메인페이지에 필요한 데이터 정리
 select MENU.ITEM_NUM, MENU.ITEM, format(menu.price,1), menu.category, MENU_DETAIL.ITEM_IMG1 from MENU join MENU_DETAIL using(ITEM_NUM);
+
+# 4-3. MenuDetail 페이지에 필요한 데이터 정리
+select menu.item_num, menu.item, menu.price, menu.category, menu.item_stock, menu_detail.item_img1, menu_detail.item_img2, menu_detail.item_desc from menu join menu_detail using(item_num);
 
 # 5. 제품리뷰 item_review 테이블
 CREATE TABLE IF NOT EXISTS item_review(

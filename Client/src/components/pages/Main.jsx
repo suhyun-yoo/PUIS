@@ -7,28 +7,28 @@ import axios from "axios";
 
 // section1 영역 img 
 import pudding1 from '../img/조선향미푸딩.jpg';
-import pudding2 from '../img/바나나푸딩.jpg';
-import pudding3 from '../img/바나나카라멜푸딩.jpg';
-import pudding4 from '../img/베리치즈푸딩.jpg';
-import pudding5 from '../img/다크초코푸딩.jpg';
-import pudding6 from '../img/민트초코푸딩.jpg';
-import pudding7 from '../img/제주말차푸딩.jpg';
-import pudding8 from '../img/티라미수푸딩.jpg';
-import pudding9 from '../img/인절미푸딩.jpg';
-import pudding10 from '../img/흑임자푸딩.jpg';
-import pudding11 from '../img/쑥푸딩.jpg';
-import pudding12 from '../img/밀크티푸딩.jpg';
+// import pudding2 from '../img/바나나푸딩.jpg';
+// import pudding3 from '../img/바나나카라멜푸딩.jpg';
+// import pudding4 from '../img/베리치즈푸딩.jpg';
+// import pudding5 from '../img/다크초코푸딩.jpg';
+// import pudding6 from '../img/민트초코푸딩.jpg';
+// import pudding7 from '../img/제주말차푸딩.jpg';
+// import pudding8 from '../img/티라미수푸딩.jpg';
+// import pudding9 from '../img/인절미푸딩.jpg';
+// import pudding10 from '../img/흑임자푸딩.jpg';
+// import pudding11 from '../img/쑥푸딩.jpg';
+// import pudding12 from '../img/밀크티푸딩.jpg';
 // section2 영역 img
 import financier1 from '../img/플레인휘낭시에.jpg';
-import financier2 from '../img/마카다미아휘낭시에.jpg';
-import financier3 from '../img/스카치헤이즐넛휘낭시에.jpg';
-import financier4 from '../img/아몬드카라멜휘낭시에.jpg';
-import financier5 from '../img/레몬홍차휘낭시에.jpg';
-import financier6 from '../img/소금초코휘낭시에.jpg';
-import financier7 from '../img/코코넛휘낭시에.jpg';
-import financier8 from '../img/흑임자휘낭시에.jpg';
-import financier9 from '../img/바질치즈휘낭시에.jpg';
-import financier10 from '../img/애플크럼블휘낭시에.jpg';
+// import financier2 from '../img/마카다미아휘낭시에.jpg';
+// import financier3 from '../img/스카치헤이즐넛휘낭시에.jpg';
+// import financier4 from '../img/아몬드카라멜휘낭시에.jpg';
+// import financier5 from '../img/레몬홍차휘낭시에.jpg';
+// import financier6 from '../img/소금초코휘낭시에.jpg';
+// import financier7 from '../img/코코넛휘낭시에.jpg';
+// import financier8 from '../img/흑임자휘낭시에.jpg';
+// import financier9 from '../img/바질치즈휘낭시에.jpg';
+// import financier10 from '../img/애플크럼블휘낭시에.jpg';
 
 
 // jquey 연결
@@ -229,7 +229,7 @@ function Main() {
             <div className={styles.slide_wrap_outer}>
               <div className={styles.slide_wrap}>
                 {item && item.filter((item) => item.category === '푸딩').map((item) => (
-                    <Link to="/menu" key={item.item_num}>
+                    <Link to={`/menu/${item.item_num}`} key={item.item_num}>
                       <div className={styles.slide}>
                         <div className={styles.imgBox}>
                           {/* <p className={styles.tag}>Signature</p> */}
@@ -390,7 +390,7 @@ function Main() {
             <div className={styles.slide_wrap_outer}>
               <div className={styles.slide_wrap}>
                 {item && item.filter(item => (item.category === '휘낭시에')).map(item => (
-                  <Link to='/menu' key={item.item_num}>
+                  <Link to={`/menu/${item.item_num}`} key={item.item_num}>
                     <div className={styles.slide}>
                       <div className={styles.imgBox}>
                         <img src={financier1} alt={item.item} title={item.item}/>
