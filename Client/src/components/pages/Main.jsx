@@ -37,17 +37,14 @@ import financier10 from '../img/애플크럼블휘낭시에.jpg';
 function Main() {
   // 더미 데이터 가져오기
   const [item, setItem] = useState();
-  // const [pudding, setPudding] = useState();
 
   useEffect(() => {
     axios.get('/main',{withCredentials: true})
       .then((res) => 
-        setItem(res.data.result),
-        // setPudding(item.map(item => (item.item_img1)))
+        setItem(res.data.result)
         )
   }, []);
-  
-  // console.log(item);
+  console.log(item);
 
   return (
     <>
@@ -232,7 +229,7 @@ function Main() {
             <div className={styles.slide_wrap_outer}>
               <div className={styles.slide_wrap}>
                 {item && item.filter((item) => item.category === '푸딩').map((item) => (
-                    <Link to="/menu" key={item.item}>
+                    <Link to="/menu" key={item.item_num}>
                       <div className={styles.slide}>
                         <div className={styles.imgBox}>
                           {/* <p className={styles.tag}>Signature</p> */}
@@ -252,7 +249,7 @@ function Main() {
         </section>
 
       {/* section2 영역 */}
-        <section className={`${styles.sec1} ${styles.sec2}`}>
+        {/* <section className={`${styles.sec1} ${styles.sec2}`}>
           <div className={`${styles.sec1_head} ${styles.sec2_head}`}>
             <div className={styles.txtBox}>
               <h2>Financier</h2>
@@ -261,7 +258,7 @@ function Main() {
             </div>
           </div>
           <div className={styles.sec2_body}>
-            {/* <div className={styles.prevBtn}></div> */}
+            <div className={styles.prevBtn}></div>
             <div className={styles.slide_wrap_outer}>
               <div className={styles.slide_wrap}>
                 <Link to='/menu'>
@@ -376,7 +373,38 @@ function Main() {
                 </Link>
               </div>
             </div>
-            {/* <div className={styles.nextBtn}></div> */}
+            <div className={styles.nextBtn}></div>
+          </div>
+        </section> */}
+
+        <section className={`${styles.sec1} ${styles.sec2}`}>
+          <div className={`${styles.sec1_head} ${styles.sec2_head}`}>
+            <div className={styles.txtBox}>
+              <h2>Financier</h2>
+              <p>특별한 레시피로 프랑스 고메버터와 100% 아몬드 가루를 사용한 휘낭시에</p>
+              <p>버터의 색을 진하게 내어 풍미를 더욱 살리는 방식으로 구워낸 휘낭시에</p>
+            </div>
+          </div>
+          <div className={styles.sec2_body}>
+            <div className={styles.prevBtn}></div>
+            <div className={styles.slide_wrap_outer}>
+              <div className={styles.slide_wrap}>
+                {item && item.filter(item => (item.category === '휘낭시에')).map(item => (
+                  <Link to='/menu' key={item.item_num}>
+                    <div className={styles.slide}>
+                      <div className={styles.imgBox}>
+                        <img src={financier1} alt={item.item} title={item.item}/>
+                      </div>
+                      <div className={styles.txtBox}>
+                        <p>{item.item}</p>
+                        <span>{item.price}</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className={styles.nextBtn}></div>
           </div>
         </section>
     </>
