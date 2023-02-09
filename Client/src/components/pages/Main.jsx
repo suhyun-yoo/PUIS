@@ -229,7 +229,7 @@ function Main() {
             <div className={styles.slide_wrap_outer}>
               <div className={styles.slide_wrap}>
                 {item && item.filter((item) => item.category === '푸딩').map((item) => (
-                    <Link to="/menu" key={item.item_num}>
+                    <Link to={`/menu/${item.item_num}`} key={item.item_num}>
                       <div className={styles.slide}>
                         <div className={styles.imgBox}>
                           {/* <p className={styles.tag}>Signature</p> */}
@@ -390,7 +390,7 @@ function Main() {
             <div className={styles.slide_wrap_outer}>
               <div className={styles.slide_wrap}>
                 {item && item.filter(item => (item.category === '휘낭시에')).map(item => (
-                  <Link to='/menu' key={item.item_num}>
+                  <Link to={`/menu/${item.item_num}`} key={item.item_num}>
                     <div className={styles.slide}>
                       <div className={styles.imgBox}>
                         <img src={financier1} alt={item.item} title={item.item}/>

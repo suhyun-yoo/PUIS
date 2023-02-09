@@ -19,7 +19,7 @@ function App() {
       <ScrollToTop/>
       <Routes>
         <Route path='/' element={<Main/>} />
-        <Route path='/menu' element={<MenuDetail/>} />
+        <Route path='/menu/:menuidx' element={<MenuDetail/>} />
         <Route path='/review/read' element={<ReviewRead/>} />
         {/* <Route path='/review/read/:no' element={<ReviewRead/>} /> */}
       </Routes>
