@@ -51,7 +51,7 @@ INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('쑥 푸딩', 4.5, '푸딩');
 INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('흑임자 푸딩', 4.5, '푸딩'); 
 INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('제주말차 푸딩', 5.0, '푸딩'); 
 INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('베리치즈 푸딩', 5.3, '푸딩'); 
-INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('딸기 푸딩', 4.3, '푸딩'); 
+INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('딸기 푸딩', 5.8, '푸딩'); 
 
 # 3-2. 휘낭시에 메뉴 추가
 INSERT INTO MENU(ITEM, PRICE, CATEGORY) VALUE('플레인 휘낭시에', 2.0, '휘낭시에'); 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS menu_detail(
 );
 
 # 4-1. menu_detail 데이터 추가
-INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(1, '../img/조선향미푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
+INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(1, '/img/조선향미푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
 INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(2, '../img/바나나푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
 INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(3, '../img/바나나카라멜푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
 INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_IMG2, ITEM_DESC) VALUE(4, '../img/다크초코푸딩.jpg', '../img/조선향미푸딩메인.jpg', '../img/menuDetail.png');
@@ -106,6 +106,9 @@ INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(22, '../img/흑임
 INSERT INTO MENU_DETAIL(ITEM_NUM, ITEM_IMG1, ITEM_DESC) VALUE(23, '../img/바질치즈휘낭시에.jpg', '../img/menuDetail.png');
 
 SELECT * FROM MENU_DETAIL;
+
+
+select MENU.ITEM_NUM, MENU.ITEM, format(menu.price,1), menu.category, MENU_DETAIL.ITEM_IMG1 from MENU join MENU_DETAIL using(ITEM_NUM);
 
 # 5. 제품리뷰 item_review 테이블
 CREATE TABLE IF NOT EXISTS item_review(

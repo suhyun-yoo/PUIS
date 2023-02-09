@@ -35,18 +35,19 @@ import financier10 from '../img/애플크럼블휘낭시에.jpg';
 // import $ from "jquery";
 
 function Main() {
-  const [pudding, setPudding] = useState();
+  // 더미 데이터 가져오기
+  const [item, setItem] = useState();
+  const [img, setImg] = useState();
 
   useEffect(() => {
     axios.get('/main',{withCredentials: true})
-      .then(res =>
-          // console.log(res.data.result),
-          setPudding(res.data.result)
+      .then((res) => 
+        setItem(res.data.result),
         )
   }, []);
-
-  console.log(pudding);
   
+  console.log(item);
+
   return (
     <>
       {/* banner 영역 */}
@@ -229,16 +230,16 @@ function Main() {
             <div className={styles.prevBtn}></div>
             <div className={styles.slide_wrap_outer}>
               <div className={styles.slide_wrap}>
-                {pudding && pudding.map((pudding) => (
-                    <Link to="/menu">
-                      <div className={styles.slide} key={pudding.item_num}>
+                {item && item.filter((item) => item.category === '푸딩').map((item) => (
+                    <Link to="/menu" key={item.item}>
+                      <div className={styles.slide}>
                         <div className={styles.imgBox}>
-                          <p className={styles.tag}>Signature</p>
-                          <img src={pudding1} alt="조선향미푸딩" title="조선향미푸딩"/>
+                          {/* <p className={styles.tag}>Signature</p> */}
+                          <img src={require(item.item_img1).default} alt={item.item} title={item.item}/>
                         </div>
                         <div className={styles.txtBox}>
-                          <p>{pudding.item}</p>
-                          <span>{pudding.price}</span>
+                          <p>{item.item}</p>
+                          <span>{item.price}</span>
                         </div>
                       </div>
                     </Link>
