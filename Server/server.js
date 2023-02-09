@@ -102,7 +102,9 @@ app.post("/signup", (req, res) => {
 // ========== 메인페이지 연결하기 ==========
 app.get('/main', (req, res) => {
   // 소수점 자리수가 0인 가격표도 소수점 아래 자리까지 보여질 수 있도록 FORMAT 사용
-  db.query('select item, FORMAT(price,1) from menu', (error, rows, fields) => {
+  // menu 테이블과 menu_detail 테이블을 조인하여 각각의 테이블에서 필요한 데이터 받아와 넘기기
+  db.query('select menu.item_num, menu.item, format(menu.price,1), menu.category, menu_detail.item_img1 from menu join menu_detail using(item_num)',
+  (error, rows, fields) => {
     console.log(rows);
     res.send({result : rows});
   })
