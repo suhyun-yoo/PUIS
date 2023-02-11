@@ -33,9 +33,9 @@ function MenuDetail() {
     return (
     <div className={styles.menuDetail}>
       <Link to='/'><button style={{cursor : 'pointer'}}> 뒤로가기 </button></Link>
-      {menu && menu.filter(menu => (menu.item_num == menuNum)).map(menu => (
+      {menu && menu.filter(menu => (menu.item_num === Number(menuNum))).map(menu => (
         <>
-          <div className={styles.menuDetail_head}>
+          <div key={menu.item_num} className={styles.menuDetail_head}>
             <div className={styles.menuDetail_head_left}>
               <div className={styles.tag}>{menu.category}</div>
               <div className={styles.imgBox}>
