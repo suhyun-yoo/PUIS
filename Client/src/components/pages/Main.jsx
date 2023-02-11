@@ -32,7 +32,7 @@ import financier1 from '../img/플레인휘낭시에.jpg';
 
 
 // jquey 연결
-// import $ from "jquery";
+import $ from "jquery";
 
 function Main() {
   // 더미 데이터 가져오기
@@ -44,7 +44,16 @@ function Main() {
         setItem(res.data.result)
         )
   }, []);
-  console.log(item);
+  // console.log(item);
+
+  // nextBtn이 클릭되면, slide 영역 좌측으로 이동하기
+  function next(){
+    alert('click');
+    document.querySelector('.sec1').style({
+      color : 'red'
+    })
+
+  };
 
   return (
     <>
@@ -244,7 +253,7 @@ function Main() {
                 ))}
               </div>
             </div>
-            <div className={styles.nextBtn}></div>
+            <div onClick={next} className={styles.nextBtn}></div>
           </div>
         </section>
 
