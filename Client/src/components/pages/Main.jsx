@@ -44,7 +44,7 @@ function Main() {
         setItem(res.data.result)
         )
   }, []);
-  // console.log(item);
+  // console.log(item[0].item_img1);
 
   // nextBtn이 클릭되면, slide 영역 좌측으로 이동하기
   function next(){
@@ -242,7 +242,8 @@ function Main() {
                       <div className={styles.slide}>
                         <div className={styles.imgBox}>
                           {/* <p className={styles.tag}>Signature</p> */}
-                          <img src={pudding1} alt={item.item} title={item.item}/>
+                          {/* <img src={pudding1} alt={item.item} title={item.item}/> */}
+                          <img src={item.item_img1}  alt={item.item} title={item.item}/>
                         </div>
                         <div className={styles.txtBox}>
                           <p>{item.item}</p>
