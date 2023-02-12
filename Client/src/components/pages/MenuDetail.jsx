@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 
 // img 임포트
-import pudding from '../img/다크초코푸딩.jpg'
+import pudding from '../img/darkChoco_pudding.jpg'
 // css 연결
 import "../css/reset.css";
 // import "../css/style.css";
