@@ -242,7 +242,6 @@ function Main() {
                       <div className={styles.slide}>
                         <div className={styles.imgBox}>
                           {/* <p className={styles.tag}>Signature</p> */}
-                          {/* <img src={pudding1} alt={item.item} title={item.item}/> */}
                           <img src={item.item_img1}  alt={item.item} title={item.item}/>
                         </div>
                         <div className={styles.txtBox}>
@@ -403,7 +402,7 @@ function Main() {
                   <Link to={`/menu/${item.item_num}`} key={item.item_num}>
                     <div className={styles.slide}>
                       <div className={styles.imgBox}>
-                        <img src={financier1} alt={item.item} title={item.item}/>
+                        <img src={item.item_img1} alt={item.item} title={item.item}/>
                       </div>
                       <div className={styles.txtBox}>
                         <p>{item.item}</p>
